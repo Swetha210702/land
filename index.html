@@ -44,6 +44,7 @@ nav {
   display: flex;
   align-items: center;
   overflow: hidden;
+   flex: 0 0 180px; 
 }
 
 /* Base logo (zoom applied correctly) */
@@ -52,8 +53,10 @@ nav {
   width: auto;
 }
 nav > .nav-logo .nav-logo-svg {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transform-origin: center;
+  width:150px;
+  height:100px;
 }
 
 /* Top-right logo slightly smaller */
@@ -73,6 +76,9 @@ footer .nav-logo .nav-logo-svg {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
+  flex: 1;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .nav-links a {
@@ -85,6 +91,7 @@ footer .nav-logo .nav-logo-svg {
 /* Right logo */
 .nav-right {
   display: flex; align-items: center; gap: 20px;
+  flex: 0 0 auto;
 }
 
 .nav-right-logo {
@@ -1070,7 +1077,7 @@ footer .nav-logo .nav-logo-svg {
   <a href="#" class="nav-logo" aria-label="Srijan Speaks Home">
     <img 
       class="nav-logo-svg" 
-      src="image.png" 
+      src="darklogo.png" 
       alt="Srijan Speaks Logo"
     >
   </a>
