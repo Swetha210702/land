@@ -8,13 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #1D3D70;
-    --white: #F7F7F7;
-    --cream: #eef0f5;
-    --accent: #F38121;
+    --black: #0a0a0a;
+    --white: #f8f6f2;
+    --cream: #f0ece4;
+    --accent: #e8410a;
     --accent2: #1a3a5c;
-    --mid: #7a8a9e;
-    --border: #c8d0dc;
+    --mid: #888880;
+    --border: #d8d4cc;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,24 +40,13 @@
   }
   .nav-logo {
     display: flex; align-items: center; gap: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    color: var(--black);
     text-decoration: none;
   }
-  /* SVG logo inline for nav - left side */
-  /* Top-left logo */
-nav .nav-logo .nav-logo-svg {
-  height: 50px;
-}
-
-/* Top-right logo */
-.nav-right .nav-logo .nav-logo-svg {
-  height: 42px;
-}
-
-/* Footer logo */
-footer .nav-logo .nav-logo-svg {
-  height: 48px;
-}
-
+  .nav-logo .dot { color: var(--accent); }
   .nav-links {
     display: flex; gap: 2.5rem;
     list-style: none;
@@ -71,16 +60,6 @@ footer .nav-logo .nav-logo-svg {
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--accent); }
-
-  /* Right logo */
-  .nav-right {
-    display: flex; align-items: center; gap: 20px;
-  }
-  .nav-right-logo {
-    height: 36px;
-    width: auto;
-    opacity: 0.9;
-  }
   .nav-cta {
     background: var(--black); color: var(--white);
     padding: 10px 24px;
@@ -147,7 +126,7 @@ footer .nav-logo .nav-logo-svg {
   .hero-desc {
     font-size: 1.02rem;
     line-height: 1.7;
-    color: #3a4f6a;
+    color: #444;
     max-width: 420px;
     margin: 32px 0 40px;
   }
@@ -324,7 +303,7 @@ footer .nav-logo .nav-logo-svg {
   .about-body {
     font-size: 1rem;
     line-height: 1.75;
-    color: #3a4f6a;
+    color: #555;
     margin-bottom: 28px;
   }
   .about-body + .about-body { margin-top: -4px; }
@@ -342,7 +321,7 @@ footer .nav-logo .nav-logo-svg {
     font-size: 1.1rem; letter-spacing: 0.05em;
     color: var(--black); margin-bottom: 4px;
   }
-  .pillar-body { font-size: 0.82rem; color: #4a6080; line-height: 1.5; }
+  .pillar-body { font-size: 0.82rem; color: #666; line-height: 1.5; }
 
   /* ── SPEAKING ── */
   .speaking {
@@ -375,7 +354,7 @@ footer .nav-logo .nav-logo-svg {
     font-style: italic; color: var(--accent);
   }
   .speaking-sub {
-    font-size: 0.9rem; color: #a0b4cc; max-width: 300px; text-align: right;
+    font-size: 0.9rem; color: #999; max-width: 300px; text-align: right;
     line-height: 1.6;
   }
   .speaking-grid {
@@ -398,13 +377,13 @@ footer .nav-logo .nav-logo-svg {
   .sg-item:hover .sg-img { transform: scale(1.05); }
   .sg-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(29,61,112,0.85) 0%, transparent 50%);
+    background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 50%);
     z-index: 1;
   }
   .sg-caption {
     position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 2;
     font-size: 0.72rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #c8d8ee;
+    text-transform: uppercase; color: #ccc;
     font-weight: 500;
   }
   .sg-caption strong {
@@ -461,7 +440,7 @@ footer .nav-logo .nav-logo-svg {
     color: var(--black); margin-bottom: 12px;
   }
   .topic-body {
-    font-size: 0.88rem; color: #4a6080; line-height: 1.65;
+    font-size: 0.88rem; color: #666; line-height: 1.65;
   }
 
   /* ── VENTURE ── */
@@ -494,7 +473,7 @@ footer .nav-logo .nav-logo-svg {
     font-style: italic; color: var(--accent);
   }
   .venture-body {
-    font-size: 1rem; line-height: 1.75; color: #3a4f6a;
+    font-size: 1rem; line-height: 1.75; color: #555;
     margin-bottom: 20px;
   }
   .venture-features {
@@ -513,7 +492,7 @@ footer .nav-logo .nav-logo-svg {
     flex-shrink: 0; margin-top: 6px;
   }
   .vf-text {
-    font-size: 0.9rem; line-height: 1.5; color: #3a4f6a;
+    font-size: 0.9rem; line-height: 1.5; color: #444;
   }
   .vf-text strong { color: var(--black); }
 
@@ -635,7 +614,7 @@ footer .nav-logo .nav-logo-svg {
     font-family: 'Playfair Display', serif;
     font-style: italic; color: var(--accent);
   }
-  .cta-body { font-size: 1rem; line-height: 1.75; color: #3a4f6a; max-width: 480px; }
+  .cta-body { font-size: 1rem; line-height: 1.75; color: #555; max-width: 480px; }
   .cta-actions { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
 
   .cta-right {
@@ -683,18 +662,16 @@ footer .nav-logo .nav-logo-svg {
   .footer-top {
     display: flex; justify-content: space-between; align-items: flex-start;
     padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #222;
     margin-bottom: 32px;
   }
-  .footer-brand-logo {
-    height: 44px;
-    width: auto;
-    margin-bottom: 12px;
-    /* invert to white for dark bg */
-    filter: brightness(0) invert(1);
-    display: block;
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; letter-spacing: 0.08em;
+    color: var(--white); margin-bottom: 10px;
   }
-  .footer-tagline { font-size: 0.8rem; color: #6a849a; max-width: 240px; line-height: 1.6; }
+  .footer-brand span { color: var(--accent); }
+  .footer-tagline { font-size: 0.8rem; color: #666; max-width: 240px; line-height: 1.6; }
   .footer-links {
     display: flex; gap: 60px;
   }
@@ -705,18 +682,18 @@ footer .nav-logo .nav-logo-svg {
   }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .footer-col a {
-    font-size: 0.85rem; color: #6a849a;
+    font-size: 0.85rem; color: #888;
     text-decoration: none; transition: color 0.2s;
   }
   .footer-col a:hover { color: var(--white); }
   .footer-bottom {
     display: flex; justify-content: space-between; align-items: center;
   }
-  .footer-copy { font-size: 0.72rem; color: #4a6480; letter-spacing: 0.08em; }
+  .footer-copy { font-size: 0.72rem; color: #555; letter-spacing: 0.08em; }
   .footer-socials { display: flex; gap: 20px; }
   .footer-socials a {
     font-size: 0.7rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: #4a6480;
+    text-transform: uppercase; color: #666;
     text-decoration: none; transition: color 0.2s;
   }
   .footer-socials a:hover { color: var(--accent); }
@@ -729,11 +706,6 @@ footer .nav-logo .nav-logo-svg {
   .fade-up.visible {
     opacity: 1; transform: translateY(0);
   }
-  .nav-logo-img {
-  height: 60px;      /* adjust based on your navbar */
-  width: auto;
-  display: block;
-}
 
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
@@ -750,36 +722,14 @@ footer .nav-logo .nav-logo-svg {
 
 <!-- NAV -->
 <nav>
-  <!-- Left: Srijan Speaks logo SVG inline -->
-  <!-- Left: Srijan Speaks logo as image -->
-  <a href="#" class="nav-logo" aria-label="Srijan Speaks Home">
-    <img 
-      class="nav-logo-svg" 
-      src="image.png" 
-      alt="Srijan Speaks Logo"
-    >
-  </a>
-
+  <a href="#" class="nav-logo"><img src=""></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#speaking">Speaking</a></li>
     <li><a href="#venture">TIQWorld</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-
-  <!-- Right: logo + CTA -->
-  <div class="nav-right">
-    <!-- Same logo, smaller, right side -->
-    <!-- Left: Srijan Speaks logo as image -->
-  <a href="#" class="nav-logo" aria-label="Srijan Speaks Home">
-    <img 
-      class="nav-logo-svg" 
-      src="image.png" 
-      alt="Srijan Speaks Logo"
-    >
-  </a>
-    <a href="#contact" class="nav-cta">Book a Session</a>
-  </div>
+  <a href="#contact" class="nav-cta">Book a Session</a>
 </nav>
 
 <!-- HERO -->
@@ -1009,10 +959,10 @@ footer .nav-logo .nav-logo-svg {
   </div>
   <div class="gallery-strip fade-up">
     <div class="gal-item"><img class="gal-img" src="IMG_4938.JPEG"></div>
-    <div class="gal-item"><img class="gal-img" src="IMG_4967.JPEG"></div>
-    <div class="gal-item"><img class="gal-img" src="IMG_2849.JPEG"></div>
-    <div class="gal-item"><img class="gal-img" src="IMG_0387.JPG"></div>
-  </div>
+     <div class="gal-item"><img class="gal-img" src="IMG_4967.JPEG"></div>
+      <div class="gal-item"><img class="gal-img" src="IMG_2849.JPEG"></div>
+       <div class="gal-item"><img class="gal-img" src="IMG_0387.JPG"></div>
+     </div>
 </section>
 
 <!-- CTA / CONTACT -->
@@ -1053,15 +1003,7 @@ footer .nav-logo .nav-logo-svg {
 <footer>
   <div class="footer-top">
     <div>
-      <!-- Logo white version for dark footer -->
-      <!-- Left: Srijan Speaks logo as image -->
-  <a href="#" class="nav-logo" aria-label="Srijan Speaks Home">
-    <img 
-      class="nav-logo-svg" 
-      src="image.png" 
-      alt="Srijan Speaks Logo"
-    >
-  </a>
+      <div class="footer-brand">SRIJAN<span>.</span>TIWARI</div>
       <p class="footer-tagline">Speaker. Entrepreneur. Educator. Building at the intersection of industry and intelligence.</p>
     </div>
     <div class="footer-links">
@@ -1095,6 +1037,7 @@ footer .nav-logo .nav-logo-svg {
 </footer>
 
 <script>
+  // Intersection observer for fade-up animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1104,6 +1047,8 @@ footer .nav-logo .nav-logo-svg {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Trigger hero immediately
   document.querySelector('.hero .fade-up').classList.add('visible');
 </script>
 
