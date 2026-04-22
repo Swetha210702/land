@@ -8,71 +8,104 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #0a0a0a;
-    --white: #f8f6f2;
-    --cream: #f0ece4;
-    --accent: #e8410a;
-    --accent2: #1a3a5c;
-    --mid: #888880;
-    --border: #d8d4cc;
-  }
+  --black: #1D3D70;
+  --white: #F7F7F7;
+  --cream: #eef0f5;
+  --accent: #F38121;
+  --accent2: #1a3a5c;
+  --mid: #7a8a9e;
+  --border: #c8d0dc;
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-  body {
-    background: var(--white);
-    color: var(--black);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5vw;
-    height: 72px;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    display: flex; align-items: center; gap: 10px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.08em;
-    color: var(--black);
-    text-decoration: none;
-  }
-  .nav-logo .dot { color: var(--accent); }
-  .nav-links {
-    display: flex; gap: 2.5rem;
-    list-style: none;
-    font-size: 0.82rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  .nav-links a {
-    color: var(--black); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-cta {
-    background: var(--black); color: var(--white);
-    padding: 10px 24px;
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 500;
-    border: none; cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .nav-cta:hover { background: var(--accent); }
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw;
+  height: 72px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
 
+.nav-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Base logo (zoom applied correctly) */
+.nav-logo-svg {
+  height: 100%;
+  width: auto;
+}
+nav > .nav-logo .nav-logo-svg {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+/* Top-right logo slightly smaller */
+.nav-right .nav-logo .nav-logo-svg {
+  max-height: 50px;
+}
+
+/* Footer logo */
+footer .nav-logo .nav-logo-svg {
+  max-height: 55px;
+}
+
+.nav-links {
+  display: flex; gap: 2.5rem;
+  list-style: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: var(--black); text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* Right logo */
+.nav-right {
+  display: flex; align-items: center; gap: 20px;
+}
+
+.nav-right-logo {
+  height: 36px;
+  width: auto;
+  opacity: 0.9;
+}
+
+.nav-cta {
+  background: var(--black); color: var(--white);
+  padding: 10px 24px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none; cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--accent); }
   /* ── HERO ── */
   .hero {
     margin-top: 72px;
@@ -126,7 +159,7 @@
   .hero-desc {
     font-size: 1.02rem;
     line-height: 1.7;
-    color: #444;
+    color: #3a4f6a;
     max-width: 420px;
     margin: 32px 0 40px;
   }
@@ -303,7 +336,7 @@
   .about-body {
     font-size: 1rem;
     line-height: 1.75;
-    color: #555;
+    color: #3a4f6a;
     margin-bottom: 28px;
   }
   .about-body + .about-body { margin-top: -4px; }
@@ -321,7 +354,7 @@
     font-size: 1.1rem; letter-spacing: 0.05em;
     color: var(--black); margin-bottom: 4px;
   }
-  .pillar-body { font-size: 0.82rem; color: #666; line-height: 1.5; }
+  .pillar-body { font-size: 0.82rem; color: #4a6080; line-height: 1.5; }
 
   /* ── SPEAKING ── */
   .speaking {
@@ -354,7 +387,7 @@
     font-style: italic; color: var(--accent);
   }
   .speaking-sub {
-    font-size: 0.9rem; color: #999; max-width: 300px; text-align: right;
+    font-size: 0.9rem; color: #a0b4cc; max-width: 300px; text-align: right;
     line-height: 1.6;
   }
   .speaking-grid {
@@ -377,13 +410,13 @@
   .sg-item:hover .sg-img { transform: scale(1.05); }
   .sg-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 50%);
+    background: linear-gradient(to top, rgba(29,61,112,0.85) 0%, transparent 50%);
     z-index: 1;
   }
   .sg-caption {
     position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 2;
     font-size: 0.72rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #ccc;
+    text-transform: uppercase; color: #c8d8ee;
     font-weight: 500;
   }
   .sg-caption strong {
@@ -440,7 +473,7 @@
     color: var(--black); margin-bottom: 12px;
   }
   .topic-body {
-    font-size: 0.88rem; color: #666; line-height: 1.65;
+    font-size: 0.88rem; color: #4a6080; line-height: 1.65;
   }
 
   /* ── VENTURE ── */
@@ -473,7 +506,7 @@
     font-style: italic; color: var(--accent);
   }
   .venture-body {
-    font-size: 1rem; line-height: 1.75; color: #555;
+    font-size: 1rem; line-height: 1.75; color: #3a4f6a;
     margin-bottom: 20px;
   }
   .venture-features {
@@ -492,7 +525,7 @@
     flex-shrink: 0; margin-top: 6px;
   }
   .vf-text {
-    font-size: 0.9rem; line-height: 1.5; color: #444;
+    font-size: 0.9rem; line-height: 1.5; color: #3a4f6a;
   }
   .vf-text strong { color: var(--black); }
 
@@ -614,7 +647,7 @@
     font-family: 'Playfair Display', serif;
     font-style: italic; color: var(--accent);
   }
-  .cta-body { font-size: 1rem; line-height: 1.75; color: #555; max-width: 480px; }
+  .cta-body { font-size: 1rem; line-height: 1.75; color: #3a4f6a; max-width: 480px; }
   .cta-actions { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
 
   .cta-right {
@@ -662,16 +695,18 @@
   .footer-top {
     display: flex; justify-content: space-between; align-items: flex-start;
     padding-bottom: 40px;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     margin-bottom: 32px;
   }
-  .footer-brand {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem; letter-spacing: 0.08em;
-    color: var(--white); margin-bottom: 10px;
+  .footer-brand-logo {
+    height: 44px;
+    width: auto;
+    margin-bottom: 12px;
+    /* invert to white for dark bg */
+    filter: brightness(0) invert(1);
+    display: block;
   }
-  .footer-brand span { color: var(--accent); }
-  .footer-tagline { font-size: 0.8rem; color: #666; max-width: 240px; line-height: 1.6; }
+  .footer-tagline { font-size: 0.8rem; color: #6a849a; max-width: 240px; line-height: 1.6; }
   .footer-links {
     display: flex; gap: 60px;
   }
@@ -682,18 +717,18 @@
   }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .footer-col a {
-    font-size: 0.85rem; color: #888;
+    font-size: 0.85rem; color: #6a849a;
     text-decoration: none; transition: color 0.2s;
   }
   .footer-col a:hover { color: var(--white); }
   .footer-bottom {
     display: flex; justify-content: space-between; align-items: center;
   }
-  .footer-copy { font-size: 0.72rem; color: #555; letter-spacing: 0.08em; }
+  .footer-copy { font-size: 0.72rem; color: #4a6480; letter-spacing: 0.08em; }
   .footer-socials { display: flex; gap: 20px; }
   .footer-socials a {
     font-size: 0.7rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: #666;
+    text-transform: uppercase; color: #4a6480;
     text-decoration: none; transition: color 0.2s;
   }
   .footer-socials a:hover { color: var(--accent); }
@@ -706,6 +741,11 @@
   .fade-up.visible {
     opacity: 1; transform: translateY(0);
   }
+  .nav-logo-img {
+  height: 60px;      /* adjust based on your navbar */
+  width: auto;
+  display: block;
+}
 
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
@@ -722,14 +762,36 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><img src=""></a>
+  <!-- Left: Srijan Speaks logo SVG inline -->
+  <!-- Left: Srijan Speaks logo as image -->
+  <a href="#" class="nav-logo" aria-label="Srijan Speaks Home">
+    <img 
+      class="nav-logo-svg" 
+      src="image.png" 
+      alt="Srijan Speaks Logo"
+    >
+  </a>
+
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#speaking">Speaking</a></li>
     <li><a href="#venture">TIQWorld</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Book a Session</a>
+
+  <!-- Right: logo + CTA -->
+  <div class="nav-right">
+    <!-- Same logo, smaller, right side -->
+    <!-- Left: Srijan Speaks logo as image -->
+  <a href="#" class="nav-logo" aria-label="Srijan Speaks Home">
+    <img 
+      class="nav-logo-svg" 
+      src="image.png" 
+      alt="Srijan Speaks Logo"
+    >
+  </a>
+    <a href="#contact" class="nav-cta">Book a Session</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -959,10 +1021,10 @@
   </div>
   <div class="gallery-strip fade-up">
     <div class="gal-item"><img class="gal-img" src="IMG_4938.JPEG"></div>
-     <div class="gal-item"><img class="gal-img" src="IMG_4967.JPEG"></div>
-      <div class="gal-item"><img class="gal-img" src="IMG_2849.JPEG"></div>
-       <div class="gal-item"><img class="gal-img" src="IMG_0387.JPG"></div>
-     </div>
+    <div class="gal-item"><img class="gal-img" src="IMG_4967.JPEG"></div>
+    <div class="gal-item"><img class="gal-img" src="IMG_2849.JPEG"></div>
+    <div class="gal-item"><img class="gal-img" src="IMG_0387.JPG"></div>
+  </div>
 </section>
 
 <!-- CTA / CONTACT -->
@@ -1003,7 +1065,15 @@
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-brand">SRIJAN<span>.</span>TIWARI</div>
+      <!-- Logo white version for dark footer -->
+      <!-- Left: Srijan Speaks logo as image -->
+  <a href="#" class="nav-logo" aria-label="Srijan Speaks Home">
+    <img 
+      class="nav-logo-svg" 
+      src="image.png" 
+      alt="Srijan Speaks Logo"
+    >
+  </a>
       <p class="footer-tagline">Speaker. Entrepreneur. Educator. Building at the intersection of industry and intelligence.</p>
     </div>
     <div class="footer-links">
@@ -1037,7 +1107,6 @@
 </footer>
 
 <script>
-  // Intersection observer for fade-up animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1047,8 +1116,6 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Trigger hero immediately
   document.querySelector('.hero .fade-up').classList.add('visible');
 </script>
 
