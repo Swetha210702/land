@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srijan Tiwari — Talks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #1D3D70;
+  --white: #F7F7F7;
+  --cream: #eef0f5;
+  --accent: #F38121;
+  --accent2: #1a3a5c;
+  --mid: #7a8a9e;
+  --border: #c8d0dc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+img{max-width:100%;display:block}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 72px; background: var(--white); border-bottom: 1px solid var(--border);
+}
+.nav-logo {height:100%;display:flex;align-items:center;overflow:hidden;flex:0 0 180px}
+.nav-logo-svg{height:100%;width:auto}
+nav > .nav-logo .nav-logo-svg {transform: scale(1.1);transform-origin:center;width:150px;height:100px}
+.nav-links{display:flex;list-style:none;flex:1;justify-content:center;gap:2rem;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.nav-links a,.footer-col a,.footer-socials a{text-decoration:none}
+.nav-links a{color:var(--black);transition:color .2s}
+.nav-links a:hover,.footer-col a:hover,.footer-socials a:hover{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:20px;flex:0 0 auto}
+.nav-cta{background:var(--black);color:var(--white);padding:10px 24px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;border:none;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--accent)}
+.hero-talks{margin-top:72px;min-height:78vh;padding:88px 7vw 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;background:linear-gradient(180deg,var(--white) 0%, #eef2f8 100%)}
+.eyebrow,.section-tag,.section-tag-light{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500;display:flex;align-items:center;gap:10px}
+.eyebrow::before,.section-tag::before,.section-tag-light::before{content:'';display:block;width:28px;height:1px;background:var(--accent)}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,7.2rem);line-height:.92;margin:22px 0 16px}
+.hero-title em,.section-title em,.roadmap-title em,.cta-title em{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent);font-size:.72em}
+.hero-copy{max-width:560px;font-size:1rem;line-height:1.8;color:#3a4f6a;margin-bottom:30px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.btn-primary,.btn-outline{padding:15px 34px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;text-decoration:none;border:2px solid var(--black);transition:all .25s}
+.btn-primary{background:var(--black);color:var(--white)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn-outline{background:transparent;color:var(--black)}
+.btn-outline:hover{background:var(--black);color:var(--white)}
+.talk-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:720px}
+.stat-box{padding:20px 18px;background:rgba(255,255,255,.75);border:1px solid var(--border)}
+.stat-box strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--black);font-weight:400}
+.stat-box span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-weight:500}
+.hero-visual{position:relative;min-height:560px}
+.visual-main{position:absolute;inset:0 90px 70px 0;overflow:hidden;border:4px solid var(--white);box-shadow:14px 14px 0 var(--border)}
+.visual-main img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(12%)}
+.visual-card{position:absolute;right:0;bottom:0;width:250px;background:var(--black);color:var(--white);padding:22px;border-left:4px solid var(--accent)}
+.visual-card .small{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#b9c7d8}
+.visual-card strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.04em;color:var(--accent);font-weight:400;margin:8px 0 4px}
+.visual-sticker{position:absolute;top:26px;right:34px;background:var(--accent);color:var(--white);padding:14px 16px;text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;font-weight:500;transform:rotate(7deg);box-shadow:0 10px 30px rgba(29,61,112,.18)}
+.logo-strip{background:var(--black);padding:15px 0;overflow:hidden;white-space:nowrap;border-top:3px solid var(--accent)}
+.logo-strip-inner{display:inline-flex;animation:marquee 24s linear infinite}
+.logo-strip span{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.18em;color:var(--white);padding:0 2.2rem}.logo-strip .sep{color:var(--accent)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.section{padding:110px 7vw}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:54px}
+.section-title,.roadmap-title,.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5vw,5rem);line-height:.94}
+.section-sub{max-width:420px;color:#4a6080;line-height:1.7;font-size:.95rem}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feature-card{background:var(--white);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+.feature-media{aspect-ratio:4/4.2;overflow:hidden;position:relative}
+.feature-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:grayscale(14%)}
+.feature-card:hover .feature-media img{transform:scale(1.05)}
+.feature-label{position:absolute;left:18px;bottom:18px;background:rgba(29,61,112,.92);color:var(--white);padding:10px 14px;border-left:3px solid var(--accent);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase}
+.feature-body{padding:28px}
+.feature-body h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.03em;margin-bottom:10px}
+.feature-body p{color:#48607e;line-height:1.7;font-size:.92rem;margin-bottom:18px}
+.feature-points{display:flex;flex-direction:column;gap:10px}
+.feature-points span{background:var(--cream);padding:12px 14px;font-size:.82rem;color:#3d5574}
+.signature{background:var(--cream)}
+.signature-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
+.signature-list{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.signature-card{background:var(--white);padding:28px;border-left:3px solid var(--accent)}
+.signature-card .num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--border);line-height:1;margin-bottom:10px}
+.signature-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;margin-bottom:8px}
+.signature-card p{color:#4a6080;line-height:1.65;font-size:.9rem}
+.signature-panel{background:var(--black);color:var(--white);padding:34px;position:sticky;top:100px}
+.signature-panel h3{font-family:'Bebas Neue',sans-serif;font-size:2.3rem;line-height:.95;margin-bottom:14px}
+.signature-panel p{color:#c8d8ee;line-height:1.75;font-size:.95rem}
+.signature-panel ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.signature-panel li{padding-left:18px;position:relative;color:#dbe6f2;line-height:1.6}
+.signature-panel li::before{content:'';position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.roadmap{background:var(--white)}
+.roadmap-wrap{position:relative;padding-left:28px}
+.roadmap-wrap::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent), rgba(243,129,33,.15))}
+.road-item{position:relative;display:grid;grid-template-columns:180px 1fr;gap:30px;padding:0 0 38px 28px}
+.road-item::before{content:'';position:absolute;left:-1px;top:8px;width:18px;height:18px;border-radius:50%;background:var(--white);border:4px solid var(--accent);box-shadow:0 0 0 6px rgba(243,129,33,.10)}
+.road-stage{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.04em;color:var(--black)}
+.road-card{background:var(--cream);padding:26px 24px;border:1px solid var(--border)}
+.road-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:.03em;margin-bottom:8px}
+.road-card p{font-size:.94rem;line-height:1.75;color:#45607d;margin-bottom:14px}
+.road-tags{display:flex;flex-wrap:wrap;gap:10px}.road-tags span{padding:9px 12px;background:var(--white);border:1px solid var(--border);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);font-weight:500}
+.quote{padding:100px 7vw;background:var(--accent);text-align:center}
+.quote-mark{font-family:'Playfair Display',serif;font-size:8rem;color:rgba(255,255,255,.16);line-height:.5;margin-bottom:16px}.quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.5rem,2.6vw,2.35rem);line-height:1.45;color:var(--white);max-width:900px;margin:0 auto 24px}.quote span{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.68);font-weight:500}
+.cta{padding:120px 7vw;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.cta-panel{background:var(--cream);padding:42px;border-top:4px solid var(--accent)}
+.cta-panel p{color:#4a6080;line-height:1.75;margin-bottom:22px}.cta-list{list-style:none;display:flex;flex-direction:column;gap:12px}.cta-list li{background:var(--white);padding:14px 16px;color:#3f5876}
+footer{background:var(--black);padding:56px 7vw 36px;border-top:3px solid var(--accent)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:32px;gap:30px}.footer-tagline{font-size:.8rem;color:#6a849a;max-width:240px;line-height:1.6}.footer-links{display:flex;gap:60px}.footer-col-title{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:16px}.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}.footer-col a,.footer-socials a{font-size:.85rem;color:#6a849a}.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-copy{font-size:.72rem;color:#4a6480;letter-spacing:.08em}.footer-socials{display:flex;gap:20px}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease}.fade-up.visible{opacity:1;transform:none}
+@media (max-width: 1000px){.hero-talks,.signature-grid,.cta{grid-template-columns:1fr}.feature-grid,.signature-list{grid-template-columns:1fr 1fr}.hero-visual{min-height:480px}.visual-main{inset:0 50px 70px 0}.section-head{flex-direction:column;align-items:flex-start}.road-item{grid-template-columns:1fr;gap:14px}}
+@media (max-width: 760px){nav .nav-links{display:none}.talk-stats,.feature-grid,.signature-list,.cta{grid-template-columns:1fr}.hero-talks{padding-top:72px}.hero-visual{min-height:400px}.visual-main{inset:0 20px 80px 0}.roadmap-wrap{padding-left:16px}.road-item{padding-left:24px}.footer-top,.footer-bottom{flex-direction:column;align-items:flex-start}.footer-links{gap:30px;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="srijan_main_updated.html" class="nav-logo" aria-label="Srijan Speaks Home">
+    <img class="nav-logo-svg" src="image.png" alt="Srijan Speaks Logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="index.html">Speaking</a></li>
+    <li><a href="#featured-talks">Talks</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="index.html" class="nav-logo" aria-label="Srijan Speaks Home">
+      <img class="nav-logo-svg" src="image.png" alt="Srijan Speaks Logo">
+    </a>
+    <a href="index.html" class="nav-cta">Book a Session</a>
+  </div>
+</nav>
+<section class="hero-talks">
+  <div class="fade-up">
+    <div class="eyebrow">Keynote Industry Speaker</div>
+    <h1 class="hero-title">Talks that turn <em>attention</em><br>into action.</h1>
+    <p class="hero-copy">This page is built around Srijan Tiwari as a keynote industry speaker — sharp insights, real industrial context, and talks designed to leave audiences with clarity, energy, and momentum. The focus here is simple: the talks, the stage presence, and the themes that matter now.</p>
+    <div class="hero-actions">
+      <a href="#featured-talks" class="btn-primary">Explore Talks</a>
+      <a href="#roadmap" class="btn-outline">View Roadmap</a>
+    </div>
+    <div class="talk-stats">
+      <div class="stat-box"><strong>25+</strong><span>Talks & Keynotes</span></div>
+      <div class="stat-box"><strong>3K+</strong><span>Audience Reached</span></div>
+      <div class="stat-box"><strong>100%</strong><span>Industry Context</span></div>
+    </div>
+  </div>
+  <div class="hero-visual fade-up">
+    <div class="visual-main"><img src="IMG_0408.JPG" alt="Srijan Tiwari speaking on stage"></div>
+    <div class="visual-sticker">Industry Voice</div>
+    <div class="visual-card">
+      <div class="small">Updated tagline</div>
+      <strong>I teach “Skills” that matters!</strong>
+      <div class="small">Built for engineers, young professionals, and modern industry rooms.</div>
+    </div>
+  </div>
+</section>
+<div class="logo-strip">
+  <div class="logo-strip-inner">
+    <span>Keynote Speaker <span class="sep">✦</span></span>
+    <span>Industry Talks <span class="sep">✦</span></span>
+    <span>AI Education <span class="sep">✦</span></span>
+    <span>Quality Engineering <span class="sep">✦</span></span>
+    <span>Future of Work <span class="sep">✦</span></span>
+    <span>Industrial Talent <span class="sep">✦</span></span>
+    <span>Keynote Speaker <span class="sep">✦</span></span>
+    <span>Industry Talks <span class="sep">✦</span></span>
+    <span>AI Education <span class="sep">✦</span></span>
+    <span>Quality Engineering <span class="sep">✦</span></span>
+    <span>Future of Work <span class="sep">✦</span></span>
+    <span>Industrial Talent <span class="sep">✦</span></span>
+  </div>
+</div>
+<section id="featured-talks" class="section">
+  <div class="section-head fade-up">
+    <div>
+      <div class="section-tag">Talks Overview</div>
+      <h2 class="section-title">His speeches are built to feel <em>alive</em>,<br>clear, and impossible to ignore.</h2>
+    </div>
+    <p class="section-sub">Srijan’s speaking style is direct, current, and rooted in real industrial understanding. The speeches are not built like generic motivational talks. They are built to hold attention, sharpen thinking, and make the audience feel the urgency of where work, skills, and industry are moving next.</p>
+  </div>
+  <div class="signature-grid fade-up">
+    <div>
+      <p class="section-sub" style="max-width:100%;margin-bottom:22px">Whether the room is filled with students, engineers, founders, or decision-makers, the approach stays consistent: strong openings, relevant examples, sharp positioning, and a close that leaves people with direction rather than just applause.</p>
+      <div class="signature-list">
+        <div class="signature-card">
+          <div class="num">01</div>
+          <h4>Sharp Openings</h4>
+          <p>Each speech starts with a statement, observation, or shift the audience immediately recognizes as real and current.</p>
+        </div>
+        <div class="signature-card">
+          <div class="num">02</div>
+          <h4>Industry Grounding</h4>
+          <p>The message always feels connected to actual industrial change, technical relevance, and professional value.</p>
+        </div>
+        <div class="signature-card">
+          <div class="num">03</div>
+          <h4>High Recall</h4>
+          <p>The best lines, examples, and transitions are designed to stay with the room even after the event is over.</p>
+        </div>
+        <div class="signature-card">
+          <div class="num">04</div>
+          <h4>Clear Direction</h4>
+          <p>The close is always purposeful — audience members leave with momentum, clarity, and something to act on.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="signature-panel">
+      <h3>What defines the speeches</h3>
+      <p>They sound young without sounding shallow. They sound ambitious without sounding abstract. And most importantly, they speak to the future of industry in a way that feels present, urgent, and useful.</p>
+      <ul>
+        <li>Clear themes instead of scattered ideas</li>
+        <li>Strong visual and verbal stage presence</li>
+        <li>Language that works in both campus and industry rooms</li>
+        <li>Talks that connect skills, work, technology, and ambition</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+<section class="section signature" style="background:var(--white);padding-top:0">
+  <div class="section-head fade-up">
+    <div>
+      <div class="section-tag">Featured Speeches</div>
+      <h2 class="section-title">A few speeches that show the <em>range</em><br>of the stage.</h2>
+    </div>
+    <p class="section-sub">This section is more visual by design — strong photos first, then the talk title, then the idea behind the speech. It feels more like a curated speaking portfolio than a repeated homepage grid.</p>
+  </div>
+  <div class="feature-grid fade-up">
+    <article class="feature-card">
+      <div class="feature-media">
+        <img src="IMG_0408.JPG" alt="Srijan delivering a keynote speech">
+        <div class="feature-label">Featured Speech 01</div>
+      </div>
+      <div class="feature-body">
+        <h3>The Skills That Matter Now</h3>
+        <p>A focused speech on relevance, capability, and what truly makes young professionals stand out in a changing technical world.</p>
+        <div class="feature-points">
+          <span>Audience: students and early-career professionals</span>
+          <span>Tone: motivating, sharp, and grounded</span>
+          <span>Theme: skills, relevance, and career direction</span>
+        </div>
+      </div>
+    </article>
+    <article class="feature-card">
+      <div class="feature-media">
+        <img src="IMG_4938.JPEG" alt="Srijan at an industry stage event">
+        <div class="feature-label">Featured Speech 02</div>
+      </div>
+      <div class="feature-body">
+        <h3>Industry, Talent & Trust</h3>
+        <p>A speech that frames how modern industry can no longer rely on old signals alone and why trust, verification, and skill quality matter more than ever.</p>
+        <div class="feature-points">
+          <span>Audience: industry forums and technical conferences</span>
+          <span>Tone: credible, bold, and future-facing</span>
+          <span>Theme: industrial credibility and talent systems</span>
+        </div>
+      </div>
+    </article>
+    <article class="feature-card">
+      <div class="feature-media">
+        <img src="IMG_0387.JPG" alt="Srijan speaking with audience energy">
+        <div class="feature-label">Featured Speech 03</div>
+      </div>
+      <div class="feature-body">
+        <h3>AI and the New Professional Edge</h3>
+        <p>A speech built around how AI is changing how people learn, work, compete, and build value inside modern technical industries.</p>
+        <div class="feature-points">
+          <span>Audience: innovation rooms, campuses, and leadership events</span>
+          <span>Tone: current, energetic, and insight-led</span>
+          <span>Theme: AI, work, and future readiness</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<section id="roadmap" class="section roadmap">
+  <div class="section-head fade-up">
+    <div>
+      <div class="section-tag">Speech Timeline</div>
+      <h2 class="roadmap-title">A road map of the <em>moments</em><br>that build the speaking journey.</h2>
+    </div>
+    <p class="section-sub">Instead of a plain list, this section works like a visual event map — a timeline of the kinds of stages, moments, and talk milestones that define Srijan Tiwari as a keynote industry speaker.</p>
+  </div>
+  <div class="roadmap-wrap fade-up">
+    <div class="road-item">
+      <div class="road-stage">Start</div>
+      <div class="road-card">
+        <h4>Campus & Youth-Facing Talks</h4>
+        <p>The early speaking momentum begins in rooms where ambition is high and direction matters. These speeches focus on relevance, skills, and what the next generation needs to build now.</p>
+        <div class="road-tags"><span>Students</span><span>Careers</span><span>Skills</span></div>
+      </div>
+    </div>
+    <div class="road-item">
+      <div class="road-stage">Next</div>
+      <div class="road-card">
+        <h4>Technical & Industry Events</h4>
+        <p>The journey moves into more technical rooms — conferences, sector events, and professional forums where the message shifts toward trust, industrial systems, talent quality, and modern relevance.</p>
+        <div class="road-tags"><span>Industry</span><span>Conferences</span><span>Credibility</span></div>
+      </div>
+    </div>
+    <div class="road-item">
+      <div class="road-stage">Growth</div>
+      <div class="road-card">
+        <h4>AI, Work & Future-Facing Keynotes</h4>
+        <p>As the speaking profile expands, the topics widen into AI, professional evolution, and the future of technical work — without losing the industrial edge that makes the talks distinctive.</p>
+        <div class="road-tags"><span>AI</span><span>Future of Work</span><span>Modern Skills</span></div>
+      </div>
+    </div>
+    <div class="road-item">
+      <div class="road-stage">Ahead</div>
+      <div class="road-card">
+        <h4>Signature Industry Speaker Positioning</h4>
+        <p>The long-term direction is a recognizable speaking identity: a voice that can move across campuses, conferences, founder spaces, and leadership rooms while staying rooted in substance.</p>
+        <div class="road-tags"><span>Keynotes</span><span>Authority</span><span>Signature Voice</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="quote">
+  <div class="quote-mark">”</div>
+  <p>I teach “Skills” that matters — because attention is easy to win, but relevance is what makes a talk stay with people after the room goes quiet.</p>
+  <span>— Srijan Tiwari</span>
+</section>
+<section class="cta fade-up">
+  <div>
+    <div class="section-tag">Book Talks</div>
+    <h2 class="cta-title">Bring this <em>voice</em><br>to your next room.</h2>
+    <p class="section-sub">For conferences, institutions, leadership summits, technical communities, and curated workshops. The focus stays on impact, not generic stage polish.</p>
+    <div class="hero-actions" style="margin-top:24px">
+      <a href="srijan_main_updated.html#contact" class="btn-primary">Book a Session</a>
+      <a href="srijan_main_updated.html" class="btn-outline">Back to Main Page</a>
+    </div>
+  </div>
+  <div class="cta-panel">
+    <p>This talks page is designed to feel like an extension of the main site while giving the speaking side its own dedicated identity.</p>
+    <ul class="cta-list">
+      <li>Same visual language as the main page</li>
+      <li>Dedicated talks positioning in navigation</li>
+      <li>Hero + featured sessions + roadmap flow</li>
+      <li>Tagline updated to: I teach “Skills” that matters!</li>
+    </ul>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="srijan_main_updated.html" class="nav-logo" aria-label="Srijan Speaks Home">
+        <img class="nav-logo-svg" src="darklogo.png" alt="Srijan Speaks Logo">
+      </a>
+      <p class="footer-tagline">Speaker. Entrepreneur. Educator. Building at the intersection of industry and intelligence.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">Navigate</div>
+        <ul>
+          <li><a href="srijan_main_updated.html#about">About</a></li>
+          <li><a href="srijan_main_updated.html#speaking">Speaking</a></li>
+          <li><a href="#featured-talks">Talks</a></li>
+          <li><a href="srijan_main_updated.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Platforms</div>
+        <ul>
+          <li><a href="srijan_main_updated.html#venture">TIQWorld</a></li>
+          <li><a href="#featured-talks">Talks</a></li>
+          <li><a href="srijan_main_updated.html#contact">Bookings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Srijan Tiwari. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter/X</a>
+    </div>
+  </div>
+</footer>
+<script>
+const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+document.querySelector('.fade-up')?.classList.add('visible');
+</script>
+</body>
+</html>

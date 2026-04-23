@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article — Srijan Tiwari</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#1D3D70;
+  --white:#F7F7F7;
+  --cream:#eef0f5;
+  --accent:#F38121;
+  --accent2:#163050;
+  --mid:#7a8a9e;
+  --border:#c8d0dc;
+  --card:#ffffff;
+  --shadow:0 20px 50px rgba(29,61,112,.08);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--white);
+  color:var(--black);
+  font-family:'DM Sans',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5vw;
+  height:72px;
+  background:rgba(247,247,247,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  height:100%;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  flex:0 0 180px;
+}
+.nav-logo-svg{
+  height:100%;
+  width:auto;
+}
+nav>.nav-logo .nav-logo-svg{
+  transform:scale(1.1);
+  transform-origin:center;
+  width:150px;
+  height:100px;
+}
+.nav-links{
+  display:flex;
+  list-style:none;
+  flex:1;
+  justify-content:center;
+  gap:2rem;
+  font-size:.82rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+.nav-links a{
+  color:var(--black);
+  transition:color .2s;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--accent);
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex:0 0 auto;
+}
+.nav-cta{
+  background:var(--black);
+  color:var(--white);
+  padding:10px 24px;
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:500;
+  transition:background .2s;
+}
+.nav-cta:hover{background:var(--accent)}
+
+/* HERO */
+.article-hero{
+  padding:130px 6vw 70px;
+  background:linear-gradient(145deg,#f9fbfe 0%,#eef2f8 55%,#f9fbfe 100%);
+  position:relative;
+  overflow:hidden;
+}
+.article-hero::after{
+  content:'';
+  position:absolute;
+  right:-120px;
+  top:40px;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(243,129,33,.14) 0%, rgba(243,129,33,0) 65%);
+}
+.article-hero-inner{
+  max-width:980px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:22px;
+}
+.eyebrow::before{
+  content:"";
+  display:block;
+  width:32px;
+  height:1px;
+  background:var(--accent);
+}
+.article-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.7rem,7vw,6.5rem);
+  line-height:.92;
+  margin-bottom:18px;
+  max-width:860px;
+}
+.article-title em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  color:var(--accent);
+  font-size:.72em;
+}
+.article-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--mid);
+  font-weight:500;
+  margin-bottom:28px;
+}
+.article-intro{
+  max-width:760px;
+  color:#425a79;
+  line-height:1.85;
+  font-size:1rem;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:32px;
+}
+.btn-primary,.btn-outline{
+  font-size:.8rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:500;
+  transition:all .25s;
+  display:inline-block;
+  padding:15px 34px;
+  border:2px solid var(--black);
+}
+.btn-primary{
+  background:var(--black);
+  color:var(--white);
+}
+.btn-primary:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.btn-outline{
+  background:transparent;
+  color:var(--black);
+}
+.btn-outline:hover{
+  background:var(--black);
+  color:var(--white);
+}
+
+/* FEATURE IMAGE */
+.feature-image-wrap{
+  padding:0 6vw 60px;
+  background:var(--white);
+}
+.feature-image{
+  max-width:1080px;
+  margin:-20px auto 0;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  background:var(--card);
+}
+.feature-image img{
+  width:100%;
+  height:560px;
+  object-fit:cover;
+  object-position:center top;
+}
+.feature-caption{
+  padding:16px 20px;
+  font-size:.78rem;
+  color:var(--mid);
+  letter-spacing:.06em;
+  border-top:1px solid var(--border);
+}
+
+/* ARTICLE LAYOUT */
+.article-shell{
+  padding:40px 6vw 110px;
+  background:var(--white);
+}
+.article-grid{
+  max-width:1080px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:36px;
+  align-items:start;
+}
+.article-rail{
+  position:sticky;
+  top:96px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.rail-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:22px;
+  border-left:3px solid var(--accent);
+  box-shadow:var(--shadow);
+}
+.rail-card strong{
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.35rem;
+  letter-spacing:.03em;
+  font-weight:400;
+  margin-bottom:6px;
+}
+.rail-card span{
+  display:block;
+  color:#506684;
+  line-height:1.65;
+  font-size:.92rem;
+}
+
+.article-body{
+  background:var(--card);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  padding:42px;
+}
+.article-body p{
+  color:#48607e;
+  line-height:1.9;
+  font-size:1rem;
+  margin-bottom:20px;
+}
+.article-body h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.2rem;
+  letter-spacing:.03em;
+  margin:34px 0 14px;
+  color:var(--black);
+}
+.article-body h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.7rem;
+  letter-spacing:.03em;
+  margin:28px 0 12px;
+  color:var(--black);
+}
+.pull-quote{
+  background:var(--black);
+  color:var(--white);
+  padding:30px;
+  border-left:4px solid var(--accent);
+  margin:32px 0;
+}
+.pull-quote .mark{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;
+  line-height:.7;
+  color:rgba(255,255,255,.22);
+}
+.pull-quote p{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:1.4rem;
+  line-height:1.6;
+  color:var(--white);
+  margin:8px 0 0;
+}
+.inline-image{
+  margin:30px 0;
+  border:1px solid var(--border);
+  overflow:hidden;
+  background:var(--white);
+}
+.inline-image img{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  object-position:center top;
+}
+.inline-image.small img{
+  height:300px;
+}
+.inline-caption{
+  padding:14px 16px;
+  font-size:.78rem;
+  color:var(--mid);
+  border-top:1px solid var(--border);
+}
+.back-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:34px;
+}
+
+/* RELATED STRIP */
+.related-strip{
+  background:var(--black);
+  padding:14px 0;
+  overflow:hidden;
+  white-space:nowrap;
+  border-top:3px solid var(--accent);
+  border-bottom:3px solid var(--accent);
+}
+.related-strip-inner{
+  display:inline-flex;
+  animation:marquee 24s linear infinite;
+}
+.related-strip span{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.08rem;
+  letter-spacing:.2em;
+  color:var(--white);
+  padding:0 2.4rem;
+}
+.related-strip .sep{color:var(--accent)}
+@keyframes marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* FOOTER */
+footer{
+  background:var(--black);
+  padding:56px 7vw 36px;
+  border-top:3px solid var(--accent);
+}
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  margin-bottom:32px;
+  gap:30px;
+}
+.footer-tagline{
+  font-size:.8rem;
+  color:#6a849a;
+  max-width:260px;
+  line-height:1.6;
+  margin-top:12px;
+}
+.footer-links{
+  display:flex;
+  gap:60px;
+}
+.footer-col-title{
+  font-size:.65rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:500;
+  margin-bottom:16px;
+}
+.footer-col ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.footer-col a{
+  font-size:.85rem;
+  color:#6a849a;
+  transition:color .2s;
+}
+.footer-col a:hover,
+.footer-socials a:hover{
+  color:var(--white);
+}
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.footer-copy{
+  font-size:.72rem;
+  color:#4a6480;
+  letter-spacing:.08em;
+}
+.footer-socials{
+  display:flex;
+  gap:20px;
+}
+.footer-socials a{
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#4a6480;
+}
+
+/* RESPONSIVE */
+@media (max-width:1000px){
+  .article-grid{
+    grid-template-columns:1fr;
+  }
+  .article-rail{
+    position:static;
+  }
+}
+
+@media (max-width:900px){
+  nav .nav-links{
+    display:none;
+  }
+  .feature-image img{
+    height:380px;
+  }
+  .article-body{
+    padding:28px;
+  }
+}
+
+@media (max-width:700px){
+  .article-hero{
+    padding-top:108px;
+  }
+  .footer-top,.footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .footer-links{
+    gap:32px;
+    flex-wrap:wrap;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Srijan Speaks Home">
+    <img class="nav-logo-svg" src="image.png" alt="Srijan Speaks Logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="Talks.html">Talks</a></li>
+    <li><a href="Workshops.html">Teaching</a></li>
+    <li><a href="Entrepreneur.html">TIQWorld</a></li>
+    <li><a href="Blogs.html" class="active">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="Blogs.html" class="nav-cta">Back to Blog</a>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <div class="eyebrow">Featured Article</div>
+    <h1 class="article-title">Why industry change is really a <em>trust problem.</em></h1>
+    <div class="article-meta">
+      <span>April 2026</span>
+      <span>6 Min Read</span>
+      <span>Industry</span>
+      <span>AI</span>
+    </div>
+    <p class="article-intro">
+      Technology arrives faster than industries can adapt. But the real bottleneck is rarely the tool itself. It is trust, validation, risk, and whether people believe a new system belongs inside the way they already work.
+    </p>
+    <div class="hero-actions">
+      <a href="Blogs.html" class="btn-primary">Back to Blog</a>
+      <a href="index.html" class="btn-outline">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<section class="feature-image-wrap">
+  <div class="feature-image">
+    <img src="IMG_0387.JPG" alt="Featured article image placeholder">
+    <div class="feature-caption">Featured visual placeholder — swap this with the main image for the article.</div>
+  </div>
+</section>
+
+<section class="article-shell">
+  <div class="article-grid">
+    <aside class="article-rail">
+      <div class="rail-card">
+        <strong>Category</strong>
+        <span>Industry, AI, Workforce Systems</span>
+      </div>
+      <div class="rail-card">
+        <strong>Reading Time</strong>
+        <span>Approx. 6 minutes</span>
+      </div>
+      <div class="rail-card">
+        <strong>Published</strong>
+        <span>April 2026</span>
+      </div>
+      <div class="rail-card">
+        <strong>Written By</strong>
+        <span>Srijan Tiwari</span>
+      </div>
+    </aside>
+
+    <article class="article-body">
+      <p>
+        When people talk about transformation, they usually describe it as a technology challenge. New systems. New tools. Better models. Smarter automation. But in mature industries, that is only part of the story.
+      </p>
+
+      <p>
+        The deeper issue is whether people trust what is being introduced. Do they understand it? Can they defend it internally? Will they be held accountable if it fails? In environments where precision matters, hesitation is not always resistance. Sometimes it is a rational response to real operational risk.
+      </p>
+
+      <div class="pull-quote">
+        <div class="mark">“</div>
+        <p>The future does not arrive when technology becomes possible. It arrives when systems begin to trust it enough to use it.</p>
+      </div>
+
+      <h2>Technology is rarely the first barrier</h2>
+
+      <p>
+        In many industries, the model may already work. The platform may already exist. The workflow may already be technically sound. But adoption still lags. That is because the success of a new system is not only decided by what it can do. It is decided by what people are willing to rely on.
+      </p>
+
+      <p>
+        Trust is what determines speed. Trust is what turns a demo into a decision. Trust is what moves a promising concept from being “interesting” to being embedded in real operations.
+      </p>
+
+      <div class="inline-image">
+        <img src="IMG_0408.JPG" alt="Inline article image placeholder 1">
+        <div class="inline-caption">Inline image placeholder — use this space for a keynote, workshop, audience, or industry visual.</div>
+      </div>
+
+      <h2>Why trust matters more in technical sectors</h2>
+
+      <p>
+        In consumer products, people can experiment quickly. In industrial settings, the cost of being wrong is often higher. That changes everything. Decisions are shaped by compliance, regulation, quality standards, client expectations, and long-held operating habits.
+      </p>
+
+      <p>
+        That is why communication matters as much as capability. If a system cannot be explained clearly, defended properly, and adopted confidently, even a strong technology can stall.
+      </p>
+
+      <h3>Adoption is cultural before it is technical</h3>
+
+      <p>
+        Most transformation projects fail because they are introduced as tools instead of as shifts in trust. Teams are shown features without being shown certainty. They are told what is new, but not why it is safe, credible, and worth changing for.
+      </p>
+
+      <p>
+        The best systems do both. They deliver capability and create confidence. That is what makes them scalable.
+      </p>
+
+      <div class="inline-image small">
+        <img src="IMG_4938.JPEG" alt="Inline article image placeholder 2">
+        <div class="inline-caption">Second image placeholder — ideal for a conference, close-up portrait, or editorial visual break.</div>
+      </div>
+
+      <h2>Where this becomes real</h2>
+
+      <p>
+        In education, trust shapes whether new methods are taken seriously. In hiring, trust determines whether skill claims are believed. In AI, trust decides whether insights are acted on. In workforce systems, trust becomes the bridge between innovation and execution.
+      </p>
+
+      <p>
+        This is why platforms built for technical industries cannot just be efficient. They also have to feel defensible. They have to support real decision-making. They have to make adoption easier, not just possible.
+      </p>
+
+      <p>
+        That is where the strongest products begin to stand apart. They do not simply introduce something new. They reduce uncertainty around it.
+      </p>
+
+      <h2>Why this matters for writing</h2>
+
+      <p>
+        This kind of article should feel like a real editorial page inside the broader site. Not a random plain page, but a continuation of the same brand language — same navigation, same footer, same design system, but optimized for readable long-form content.
+      </p>
+
+      <p>
+        That way, when someone clicks from the blog listing into a full piece, it still feels like the same website — just deeper, more focused, and more intentional.
+      </p>
+
+      <div class="back-links">
+        <a href="Blogs.html" class="btn-primary">← Back to Blog</a>
+        <a href="index.html" class="btn-outline">← Back to Home</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="related-strip">
+  <div class="related-strip-inner">
+    <span>Industry<span class="sep">✦</span></span>
+    <span>AI<span class="sep">✦</span></span>
+    <span>Trust<span class="sep">✦</span></span>
+    <span>Startups<span class="sep">✦</span></span>
+    <span>Teaching<span class="sep">✦</span></span>
+    <span>Future of Work<span class="sep">✦</span></span>
+    <span>Industry<span class="sep">✦</span></span>
+    <span>AI<span class="sep">✦</span></span>
+    <span>Trust<span class="sep">✦</span></span>
+    <span>Startups<span class="sep">✦</span></span>
+    <span>Teaching<span class="sep">✦</span></span>
+    <span>Future of Work<span class="sep">✦</span></span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="nav-logo" aria-label="Srijan Speaks Home">
+        <img class="nav-logo-svg" src="darklogo.png" alt="Srijan Speaks Logo">
+      </a>
+      <p class="footer-tagline">Speaker. Entrepreneur. Educator. Building at the intersection of industry and intelligence.</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">Navigate</div>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="Talks.html">Talks</a></li>
+          <li><a href="Workshops.html">Teaching</a></li>
+          <li><a href="Entrepreneur.html">TIQWorld</a></li>
+          <li><a href="Blogs.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Explore</div>
+        <ul>
+          <li><a href="Blogs.html">All Articles</a></li>
+          <li><a href="Entrepreneur.html">TIQWorld</a></li>
+          <li><a href="Talks.html">Speaking</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Srijan Tiwari. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/srijantiwari10/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter/X</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

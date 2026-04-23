@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Srijan Tiwari — Teaching & Workshops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#1D3D70;
+  --white:#F7F7F7;
+  --cream:#eef0f5;
+  --accent:#F38121;
+  --accent2:#163050;
+  --mid:#7a8a9e;
+  --border:#c8d0dc;
+  --card:#ffffff;
+  --shadow:0 20px 50px rgba(29,61,112,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background:rgba(247,247,247,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{height:100%;display:flex;align-items:center;overflow:hidden;flex:0 0 180px}
+.nav-logo-svg{height:100%;width:auto}
+nav>.nav-logo .nav-logo-svg{transform:scale(1.1);transform-origin:center;width:150px;height:100px}
+.nav-links{display:flex;list-style:none;flex:1;justify-content:center;gap:2rem;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.nav-links a{color:var(--black);transition:color .2s}.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:20px;flex:0 0 auto}
+.nav-cta,.btn-primary,.btn-outline{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:all .25s}
+.nav-cta{background:var(--black);color:var(--white);padding:10px 24px}.nav-cta:hover{background:var(--accent)}
+
+.hero{padding:120px 6vw 70px;min-height:100vh;background:
+ radial-gradient(circle at 78% 18%, rgba(243,129,33,.16), transparent 18%),
+ linear-gradient(145deg, #f9fbfe 0%, #eef2f8 55%, #f9fbfe 100%);
+ position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center}
+.eyebrow,.section-tag{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700;display:flex;align-items:center;gap:12px}
+.eyebrow::before,.section-tag::before{content:"";display:block;width:32px;height:1px;background:var(--accent)}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.3rem,8vw,7.7rem);line-height:.9;margin:24px 0 18px;max-width:740px}
+.hero-title em,.section-title em,.cta-title em,.lab-title em{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent);font-size:.72em}
+.hero-copy{max-width:550px;color:#425a79;line-height:1.8;font-size:1rem;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:34px}
+.btn-primary{background:var(--black);color:var(--white);padding:15px 34px;border:2px solid var(--black)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn-outline{background:transparent;color:var(--black);padding:15px 34px;border:2px solid var(--black)}
+.btn-outline:hover{background:var(--black);color:var(--white)}
+.teach-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:760px}
+.teach-metric{background:rgba(255,255,255,.78);border:1px solid var(--border);padding:22px 20px;backdrop-filter:blur(8px)}
+.teach-metric strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:2.25rem;line-height:1;font-weight:400}
+.teach-metric span{display:block;margin-top:8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);font-weight:500;line-height:1.5}
+.hero-panel{position:relative;min-height:610px}
+.panel-main{position:absolute;inset:40px 70px 110px 0;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden}
+.panel-main img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(8%)}
+.panel-float{position:absolute;right:0;top:0;width:260px;background:var(--black);color:var(--white);padding:24px;border-left:4px solid var(--accent);box-shadow:0 18px 35px rgba(29,61,112,.18)}
+.panel-float .mini{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#bed0e2}
+.panel-float strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:2.15rem;line-height:.95;color:var(--accent);font-weight:400;margin:10px 0 8px}
+.panel-float p{color:#d9e5f1;line-height:1.65;font-size:.88rem}
+.sticker{position:absolute;left:36px;bottom:38px;background:var(--accent);color:var(--white);padding:16px 18px;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;transform:rotate(-7deg);box-shadow:0 14px 30px rgba(29,61,112,.16)}
+
+.learning-ribbon{background:var(--black);padding:14px 0;overflow:hidden;white-space:nowrap;border-top:3px solid var(--accent);border-bottom:3px solid var(--accent)}
+.learning-ribbon-inner{display:inline-flex;animation:marquee 24s linear infinite}
+.learning-ribbon span{font-family:'Bebas Neue',sans-serif;font-size:1.08rem;letter-spacing:.2em;color:var(--white);padding:0 2.4rem}.learning-ribbon .sep{color:var(--accent)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.section{padding:110px 7vw}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:54px}
+.section-title,.lab-title,.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5vw,5rem);line-height:.94}
+.section-sub{max-width:430px;color:#4c6381;line-height:1.75;font-size:.96rem}
+
+.workshop-architecture{background:var(--cream);position:relative;overflow:hidden}
+.arch-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
+.arch-left{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.arch-card{background:var(--card);padding:28px;border:1px solid var(--border);min-height:220px;position:relative;box-shadow:var(--shadow)}
+.arch-card:nth-child(2){transform:translateY(36px)}
+.arch-card:nth-child(3){transform:translateY(-10px)}
+.arch-card .num{font-family:'Bebas Neue',sans-serif;font-size:2.9rem;color:var(--border);line-height:1;margin-bottom:12px}
+.arch-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em;margin-bottom:10px}
+.arch-card p{color:#48607e;font-size:.92rem;line-height:1.7}
+.arch-card .bar{position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),transparent)}
+.arch-right{background:var(--black);color:var(--white);padding:34px;position:sticky;top:100px}
+.arch-right p{color:#d4e0eb;line-height:1.8;font-size:.96rem}
+.method-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:26px}
+.method-list li{padding:14px 16px 14px 42px;background:rgba(255,255,255,.06);position:relative;color:#edf3f9;line-height:1.65}
+.method-list li::before{content:'';position:absolute;left:16px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(243,129,33,.12)}
+
+.workshop-lab{background:var(--white)}
+.lab-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+.lab-rail{display:flex;flex-direction:column;gap:16px;position:sticky;top:100px}
+.rail-card{background:var(--cream);padding:24px;border-left:3px solid var(--accent)}
+.rail-card strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:.03em;margin-bottom:6px;font-weight:400}
+.rail-card span{display:block;color:#506684;line-height:1.65;font-size:.9rem}
+.lab-board{background:linear-gradient(180deg,#f8fbff 0%, #eef3f8 100%);border:1px solid var(--border);padding:26px;box-shadow:var(--shadow)}
+.session-track{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:start;padding:20px 0;border-bottom:1px solid var(--border)}
+.session-track:last-child{border-bottom:none}
+.track-time{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1;color:var(--accent)}
+.track-card{background:var(--card);padding:22px;border:1px solid rgba(29,61,112,.08)}
+.track-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:.03em;margin-bottom:8px}
+.track-card p{color:#4a6080;line-height:1.72;font-size:.92rem;margin-bottom:14px}
+.track-tags{display:flex;flex-wrap:wrap;gap:10px}.track-tags span{padding:8px 12px;background:var(--cream);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);font-weight:500}
+
+.outcomes{background:linear-gradient(180deg,#f9fafc 0%, #ffffff 100%)}
+.outcome-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.outcome-card{background:var(--card);padding:32px 26px;border:1px solid var(--border);position:relative;overflow:hidden;min-height:220px}
+.outcome-card::after{content:'';position:absolute;right:-24px;bottom:-24px;width:90px;height:90px;border-radius:50%;background:rgba(243,129,33,.08)}
+.outcome-card .top{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:16px}
+.outcome-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:.03em;margin-bottom:10px;line-height:1}
+.outcome-card p{color:#4d6482;line-height:1.68;font-size:.9rem}
+
+.showcase{background:var(--black);color:var(--white)}
+.showcase-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}
+.showcase-copy p{color:#c9d7e6;max-width:560px;line-height:1.8;font-size:.98rem;margin-top:18px}
+.tile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+.tile{background:rgba(255,255,255,.06);padding:24px;border:1px solid rgba(255,255,255,.08)}
+.tile strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;font-weight:400;letter-spacing:.03em;margin-bottom:8px;color:var(--white)}
+.tile p{color:#c1d0e0;line-height:1.65;font-size:.9rem}
+.showcase-photo{display:grid;grid-template-rows:1fr auto;gap:18px}
+.photo-large{min-height:380px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.photo-large img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(10%)}
+.quote-card{background:var(--accent);padding:28px;color:var(--white)}
+.quote-card .quote-mark{font-family:'Playfair Display',serif;font-size:4rem;line-height:.7;opacity:.3}
+.quote-card p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.35rem;line-height:1.5;margin-top:8px}
+.quote-card span{display:block;margin-top:16px;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;opacity:.8}
+
+.cta{padding:120px 7vw;background:var(--white)}
+.cta-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;background:linear-gradient(135deg,#eef2f7 0%, #f9fbfd 100%);border:1px solid var(--border);padding:40px;box-shadow:var(--shadow)}
+.cta-copy p{max-width:520px;color:#49617f;line-height:1.8;font-size:.98rem;margin:20px 0 32px}
+.cta-checks{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cta-check{background:var(--card);padding:16px 18px;border-left:3px solid var(--accent);color:#46607d;font-size:.9rem;line-height:1.6}
+.cta-panel{background:var(--black);padding:34px;color:var(--white)}
+.cta-panel strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:2rem;font-weight:400;line-height:1;margin-bottom:14px;color:var(--accent)}
+.cta-panel p{color:#d4e0eb;line-height:1.72;font-size:.94rem;margin-bottom:24px}
+.cta-panel a{display:inline-block}
+
+footer{background:var(--black);padding:56px 7vw 36px;border-top:3px solid var(--accent)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:32px;gap:30px}
+.footer-tagline{font-size:.8rem;color:#6a849a;max-width:260px;line-height:1.6;margin-top:12px}
+.footer-links{display:flex;gap:60px}
+.footer-col-title{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:.85rem;color:#6a849a;transition:color .2s}.footer-col a:hover,.footer-socials a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-copy{font-size:.72rem;color:#4a6480;letter-spacing:.08em}.footer-socials{display:flex;gap:20px}.footer-socials a{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#4a6480}
+
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .75s ease, transform .75s ease}.fade-up.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:1100px){
+  .hero-grid,.arch-grid,.lab-layout,.showcase-grid,.cta-wrap{grid-template-columns:1fr}
+  .arch-right,.lab-rail{position:static}
+  .teach-strip,.outcome-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  nav .nav-links{display:none}
+  .arch-left,.tile-grid,.cta-checks{grid-template-columns:1fr}
+  .panel-main{inset:20px 30px 110px 0}
+}
+@media (max-width:700px){
+  .hero{padding-top:108px}
+  .teach-strip,.outcome-grid{grid-template-columns:1fr}
+  .session-track{grid-template-columns:1fr}
+  .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start}
+  .footer-links{gap:32px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Srijan Speaks Home">
+    <img class="nav-logo-svg" src="image.png" alt="Srijan Speaks Logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="Talks(2).html">Talks</a></li>
+    <li><a href="Workshops.html" class="active">Teaching</a></li>
+    <li><a href="Entrepreneur.html">TIQWorld</a></li>
+    <li><a href="Blogs.html">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="index.html#contact" class="nav-cta">Book Workshop</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="fade-up">
+      <div class="eyebrow">Teaching & Workshops</div>
+      <h1 class="hero-title">Teaching that turns <em>complexity</em> into capability.</h1>
+      <p class="hero-copy">This page is built around one thing only: how Srijan teaches. Not surface-level inspiration, not generic lecture content — but applied learning experiences that help students, professionals, and technical teams actually understand, retain, and use what they learn.</p>
+      <div class="hero-actions">
+        <a href="#formats" class="btn-primary">Explore Formats</a>
+        <a href="#lab" class="btn-outline">See Workshop Flow</a>
+      </div>
+      <div class="teach-strip">
+        <div class="teach-metric"><strong>Concept → Skill</strong><span>Every session is built to convert ideas into usable action</span></div>
+        <div class="teach-metric"><strong>Deep Tech</strong><span>AI, industry, quality systems, future of work, applied innovation</span></div>
+        <div class="teach-metric"><strong>Workshop-Led</strong><span>Interactive teaching designed for rooms that need real engagement</span></div>
+      </div>
+    </div>
+    <div class="hero-panel fade-up">
+      <div class="panel-main"><img src="IMG_0408.JPG" alt="Srijan teaching on stage"></div>
+      <div class="panel-float">
+        <div class="mini">Teaching Philosophy</div>
+        <strong>I teach “Skills” that matters!</strong>
+        <p>Sessions are designed to feel alive, rigorous, and practical — where the room leaves with clarity, confidence, and a sharper point of view.</p>
+      </div>
+      <div class="sticker">Workshop First<br>Learning Design</div>
+    </div>
+  </div>
+</section>
+
+<div class="learning-ribbon">
+  <div class="learning-ribbon-inner">
+    <span>Workshops<span class="sep">✦</span></span>
+    <span>Applied AI<span class="sep">✦</span></span>
+    <span>Deep-Tech Learning<span class="sep">✦</span></span>
+    <span>Interactive Teaching<span class="sep">✦</span></span>
+    <span>Industry Insight<span class="sep">✦</span></span>
+    <span>Future Skills<span class="sep">✦</span></span>
+    <span>Workshops<span class="sep">✦</span></span>
+    <span>Applied AI<span class="sep">✦</span></span>
+    <span>Deep-Tech Learning<span class="sep">✦</span></span>
+    <span>Interactive Teaching<span class="sep">✦</span></span>
+    <span>Industry Insight<span class="sep">✦</span></span>
+    <span>Future Skills<span class="sep">✦</span></span>
+  </div>
+</div>
+
+<section id="formats" class="section workshop-architecture">
+  <div class="section-head fade-up">
+    <div>
+      <div class="section-tag">How He Teaches</div>
+      <h2 class="section-title">A workshop architecture built for <em>real learning.</em></h2>
+    </div>
+    <p class="section-sub">The layout of a Srijan workshop is intentional: hook the room, simplify the hard thing, get people involved, connect it to the real world, and make sure the learning lasts beyond the session itself.</p>
+  </div>
+  <div class="arch-grid">
+    <div class="arch-left fade-up">
+      <article class="arch-card">
+        <div class="bar"></div>
+        <div class="num">01</div>
+        <h3>Make it Click</h3>
+        <p>He starts from the audience’s current reality, not from jargon. Concepts are introduced with stories, use-cases, and clear hooks that make even technical topics feel accessible.</p>
+      </article>
+      <article class="arch-card">
+        <div class="bar"></div>
+        <div class="num">02</div>
+        <h3>Break Down Complexity</h3>
+        <p>Whether the topic is AI, industrial systems, hiring, certification, or the future of work, the teaching style focuses on structured simplification without dumbing anything down.</p>
+      </article>
+      <article class="arch-card">
+        <div class="bar"></div>
+        <div class="num">03</div>
+        <h3>Keep The Room Active</h3>
+        <p>Workshops are built to be lived, not just watched. Questions, scenarios, reflection prompts, and audience interaction make the room part of the experience.</p>
+      </article>
+      <article class="arch-card">
+        <div class="bar"></div>
+        <div class="num">04</div>
+        <h3>End With Action</h3>
+        <p>The outcome is always practical: a new framework, sharper language, better decision-making, or a clearer understanding of what to do next.</p>
+      </article>
+    </div>
+    <aside class="arch-right fade-up">
+      <div class="section-tag">Core Principles</div>
+      <h2 class="lab-title">Teaching should feel <em>alive.</em></h2>
+      <p>The best workshops do not just transfer information. They create momentum. Srijan’s teaching style sits at the intersection of clarity, energy, depth, and relevance — especially for audiences navigating fast-moving technical and industrial change.</p>
+      <ul class="method-list">
+        <li>High-signal sessions with low fluff and no filler slides.</li>
+        <li>Concepts explained with enough depth to earn trust from serious audiences.</li>
+        <li>Examples grounded in how technology changes careers, teams, and industries.</li>
+        <li>Flexible delivery across keynote workshop, masterclass, and interactive session formats.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="lab" class="section workshop-lab">
+  <div class="section-head fade-up">
+    <div>
+      <div class="section-tag">Inside The Workshop</div>
+      <h2 class="section-title">What the learning journey can <em>look like.</em></h2>
+    </div>
+    <p class="section-sub">This section is designed like a workshop board — showing how a session can move from curiosity to understanding to hands-on discussion to takeaways the audience can actually use.</p>
+  </div>
+  <div class="lab-layout">
+    <div class="lab-rail fade-up">
+      <div class="rail-card"><strong>For Students</strong><span>Sessions that make emerging technologies and future skills feel understandable, relevant, and worth pursuing.</span></div>
+      <div class="rail-card"><strong>For Professionals</strong><span>Workshops that reframe what AI, learning, and industry change mean for real careers and real decisions.</span></div>
+      <div class="rail-card"><strong>For Institutions & Teams</strong><span>Custom learning experiences designed around the maturity, language, and needs of the room.</span></div>
+    </div>
+    <div class="lab-board fade-up">
+      <div class="session-track">
+        <div class="track-time">01</div>
+        <div class="track-card">
+          <h4>Open With Context</h4>
+          <p>Anchor the room in a current problem, shift, or opportunity. The opening creates urgency and relevance so the audience understands why the topic matters right now.</p>
+          <div class="track-tags"><span>Icebreakers</span><span>Context Build</span><span>Room Alignment</span></div>
+        </div>
+      </div>
+      <div class="session-track">
+        <div class="track-time">02</div>
+        <div class="track-card">
+          <h4>Teach The Core Idea</h4>
+          <p>Introduce the core framework, concept, or system in a way that is memorable. This is where the complexity gets translated into a language the room can work with.</p>
+          <div class="track-tags"><span>Frameworks</span><span>Analogies</span><span>Simplification</span></div>
+        </div>
+      </div>
+      <div class="session-track">
+        <div class="track-time">03</div>
+        <div class="track-card">
+          <h4>Move Into Application</h4>
+          <p>The session shifts from explanation to use. Participants reflect, respond, discuss, or test the idea against problems they actually care about.</p>
+          <div class="track-tags"><span>Discussion</span><span>Case Lens</span><span>Application</span></div>
+        </div>
+      </div>
+      <div class="session-track">
+        <div class="track-time">04</div>
+        <div class="track-card">
+          <h4>Leave With Direction</h4>
+          <p>The close is designed to sharpen action: what to learn next, what to rethink, what to try, and how to carry the session beyond the room.</p>
+          <div class="track-tags"><span>Takeaways</span><span>Action Steps</span><span>Momentum</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section outcomes">
+  <div class="section-head fade-up">
+    <div>
+      <div class="section-tag">Teaching Outcomes</div>
+      <h2 class="section-title">What the audience should walk away <em>with.</em></h2>
+    </div>
+    <p class="section-sub">This page is not about abstract education. It is about what teaching produces: confidence, comprehension, sharper thinking, and a practical sense of how ideas connect to work and growth.</p>
+  </div>
+  <div class="outcome-grid fade-up">
+    <article class="outcome-card">
+      <div class="top">Outcome 01</div>
+      <h3>Clarity</h3>
+      <p>The topic stops feeling intimidating and starts feeling navigable.</p>
+    </article>
+    <article class="outcome-card">
+      <div class="top">Outcome 02</div>
+      <h3>Retention</h3>
+      <p>The session is structured to be remembered, not just attended.</p>
+    </article>
+    <article class="outcome-card">
+      <div class="top">Outcome 03</div>
+      <h3>Participation</h3>
+      <p>The room gets involved because the learning is built for engagement.</p>
+    </article>
+    <article class="outcome-card">
+      <div class="top">Outcome 04</div>
+      <h3>Actionability</h3>
+      <p>People leave with a direction, not just a stack of ideas.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section showcase">
+  <div class="showcase-grid">
+    <div class="showcase-copy fade-up">
+      <div class="section-tag">Signature Teaching Style</div>
+      <h2 class="section-title">High-energy delivery.<br>Serious <em>substance.</em></h2>
+      <p>The page design here is intentionally different from Talks and TIQWorld because teaching is a different persona. It is less about stage presence or founder positioning, and more about how Srijan leads a room through understanding — with structure, warmth, sharp examples, and a clear point of view.</p>
+      <div class="tile-grid">
+        <div class="tile"><strong>Masterclasses</strong><p>Long-form sessions for deeper conceptual understanding and stronger audience immersion.</p></div>
+        <div class="tile"><strong>Interactive Workshops</strong><p>Designed for participation, discussion, reflection, and applied learning.</p></div>
+        <div class="tile"><strong>Institution Sessions</strong><p>Tailored delivery for colleges, programs, departments, and learning communities.</p></div>
+        <div class="tile"><strong>Professional Learning Rooms</strong><p>Built for teams and professionals who need depth, relevance, and practical insight.</p></div>
+      </div>
+    </div>
+    <div class="showcase-photo fade-up">
+      <div class="photo-large"><img src="IMG_0387.JPG" alt="Srijan conducting a workshop"></div>
+      <div class="quote-card">
+        <div class="quote-mark">“</div>
+        <p>The goal is not to impress the room with complexity. It is to make the room stronger because the complexity finally makes sense.</p>
+        <span>Teaching Philosophy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-wrap fade-up">
+    <div class="cta-copy">
+      <div class="section-tag">Book A Session</div>
+      <h2 class="cta-title">Build a teaching experience that your audience will <em>remember.</em></h2>
+      <p>Whether you need a workshop, masterclass, student-facing session, or learning experience for professionals, this page is designed to position Srijan first and foremost as a teacher who can hold attention and deliver substance.</p>
+      <div class="cta-checks">
+        <div class="cta-check">Custom workshop themes and learning goals</div>
+        <div class="cta-check">Formats for institutions, teams, and communities</div>
+        <div class="cta-check">Teaching-led sessions with high audience engagement</div>
+        <div class="cta-check">Built around clarity, depth, and applied relevance</div>
+      </div>
+    </div>
+    <div class="cta-panel">
+      <strong>Teaching & Workshop Enquiries</strong>
+      <p>Use this page as the dedicated teaching persona page in the overall site. It is designed to stand on its own and communicate one clear message: Srijan teaches with energy, clarity, and real-world relevance.</p>
+      <a href="index.html#contact" class="btn-primary">Enquire Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="nav-logo" aria-label="Srijan Speaks Home">
+        <img class="nav-logo-svg" src="darklogo.png" alt="Srijan Speaks Logo">
+      </a>
+      <p class="footer-tagline">Speaker. Teacher. Entrepreneur. Building sharp rooms and stronger thinking.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">Navigate</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Talks(2).html">Talks</a></li>
+          <li><a href="Workshops.html">Teaching</a></li>
+          <li><a href="Entrepreneur.html">TIQWorld</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul>
+          <li><a href="mailto:hello@srijan.world">Email</a></li>
+          <li><a href="https://linkedin.com/in/srijan-tiwari" target="_blank">LinkedIn</a></li>
+          <li><a href="index.html#contact">Book a Session</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Srijan Tiwari. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter/X</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+const firstFade = document.querySelector('.fade-up');
+if (firstFade) firstFade.classList.add('visible');
+</script>
+
+</body>
+</html>
