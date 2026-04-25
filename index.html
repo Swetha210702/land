@@ -1561,7 +1561,9 @@ nav > .nav-logo .nav-logo-svg,
     grid-template-columns: 1fr !important;
     display: grid;
   }
-
+  .topic-card {
+  padding: 22px;
+}
   .hero-right,
   .hero-panel,
   .hero-visual {
@@ -1672,7 +1674,9 @@ nav > .nav-logo .nav-logo-svg,
     width: 90px;
     min-width: 88px;
   }
-
+  .topics {
+  padding: 100px 6vw;
+}
   nav > .nav-logo .nav-logo-svg,
   .nav-logo-svg {
     width: 92px !important;
@@ -1711,7 +1715,11 @@ nav > .nav-logo .nav-logo-svg,
     padding: 18px !important;
   }
 }
-
+@media (max-width: 760px) {
+  .topics {
+    padding: 70px 20px;
+  }
+}
 /* Landscape phones */
 @media (max-height: 500px) and (orientation: landscape) {
   nav {
