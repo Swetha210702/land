@@ -271,6 +271,235 @@ footer{background:var(--black);padding:56px 7vw 36px;border-top:3px solid var(--
     font-size: 0.7rem;
   }
 }
+/* ===== FINAL FULL-PAGE RESPONSIVE FIX ===== */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* tablets + small laptops */
+@media (max-width: 1100px) {
+  .hero,
+  .founder-hero,
+  .article-hero {
+    padding: 110px 5vw 70px !important;
+    min-height: auto !important;
+  }
+
+  .hero-grid,
+  .founder-grid,
+  .article-grid,
+  .article-layout,
+  .newsletter-wrap,
+  .cta-wrap,
+  .showcase-grid,
+  .lab-layout,
+  .arch-grid,
+  .manifesto-wrap,
+  .ecosystem-top,
+  .journey-shell,
+  .founder-card,
+  .cta-section {
+    grid-template-columns: 1fr !important;
+  }
+
+  .posts-grid,
+  .outcome-grid,
+  .teach-strip,
+  .hero-band,
+  .ecosystem-grid,
+  .tile-grid,
+  .newsletter-points,
+  .cta-checks,
+  .arch-left {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .section,
+  .manifesto,
+  .ecosystem,
+  .journey,
+  .founder-block,
+  .cta-section {
+    padding: 90px 5vw !important;
+  }
+}
+
+/* tablets */
+@media (max-width: 900px) {
+  nav {
+    height: 66px;
+    padding: 0 22px;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .hero-title,
+  .article-title {
+    font-size: clamp(3rem, 10vw, 4.2rem) !important;
+    line-height: 0.95 !important;
+  }
+
+  .section-title,
+  .cta-title,
+  .lab-title {
+    font-size: clamp(2.5rem, 8vw, 3.6rem) !important;
+    line-height: 0.95 !important;
+  }
+
+  .article-body,
+  .article-main,
+  .hero-panel,
+  .cta-panel,
+  .newsletter-panel,
+  .cta-wrap {
+    padding: 28px !important;
+  }
+
+  .feature-image img,
+  .inline-image img,
+  .photo-large img,
+  .hero-photo,
+  .founder-card img {
+    height: 340px !important;
+    object-fit: cover;
+  }
+}
+
+/* phones */
+@media (max-width: 600px) {
+  nav {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .nav-cta {
+    padding: 8px 10px;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero,
+  .founder-hero,
+  .article-hero {
+    padding: 95px 18px 45px !important;
+  }
+
+  .section,
+  .manifesto,
+  .ecosystem,
+  .journey,
+  .founder-block,
+  .cta-section {
+    padding: 60px 18px !important;
+  }
+
+  .article-shell {
+    padding: 30px 18px 65px !important;
+  }
+
+  .hero-title,
+  .article-title {
+    font-size: 2.45rem !important;
+    line-height: 0.96 !important;
+  }
+
+  .section-title,
+  .cta-title,
+  .lab-title {
+    font-size: 2.15rem !important;
+    line-height: 0.98 !important;
+  }
+
+  .hero-copy,
+  .article-intro,
+  .section-sub,
+  .section-copy,
+  .article-body p,
+  .article-main p,
+  .footer-tagline {
+    font-size: 0.92rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .posts-grid,
+  .outcome-grid,
+  .teach-strip,
+  .hero-band,
+  .ecosystem-grid,
+  .tile-grid,
+  .newsletter-points,
+  .cta-checks,
+  .arch-left {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-actions,
+  .back-links,
+  .cta-actions {
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .form-submit {
+    width: 100%;
+    text-align: center;
+    padding: 13px 18px !important;
+  }
+
+  .feature-image img,
+  .inline-image img,
+  .photo-large img,
+  .hero-photo,
+  .founder-card img {
+    height: 230px !important;
+    object-fit: cover;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-links {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+}
+
+/* very small iPhones */
+@media (max-width: 390px) {
+  .hero-title,
+  .article-title {
+    font-size: 2.1rem !important;
+  }
+
+  .section-title,
+  .cta-title,
+  .lab-title {
+    font-size: 1.9rem !important;
+  }
+
+  .feature-image img,
+  .inline-image img,
+  .photo-large img,
+  .hero-photo,
+  .founder-card img {
+    height: 200px !important;
+  }
+}
 @media (max-width:700px){
   .hero{padding-top:108px}
   .teach-strip,.outcome-grid{grid-template-columns:1fr}
