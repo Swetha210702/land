@@ -170,6 +170,43 @@ footer .nav-logo .nav-logo-svg {
     max-width: 420px;
     margin: 32px 0 40px;
   }
+
+  /* HERO NEW CONTENT */
+  .hero-highlight-box {
+    margin: 10px 0 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 520px;
+  }
+
+  .hero-highlight-item {
+    background: rgba(238,240,245,0.95);
+    border-left: 3px solid var(--accent);
+    padding: 16px 18px;
+    transition: 0.3s ease;
+  }
+
+  .hero-highlight-item:hover {
+    transform: translateX(6px);
+    background: #ffffff;
+  }
+
+  .hero-highlight-item strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.04em;
+    font-size: 1.25rem;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+
+  .hero-highlight-item span {
+    font-size: 0.86rem;
+    color: #4a6080;
+    line-height: 1.6;
+  }
+
   .hero-actions {
     display: flex; gap: 16px; align-items: center;
   }
@@ -335,11 +372,17 @@ footer .nav-logo .nav-logo-svg {
     color: var(--black);
     margin-bottom: 24px;
   }
-  .about-h2 em {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--accent);
-  }
+  .about-h2 em{
+  font-family:'Bebas Neue', sans-serif;
+  font-style:normal;
+  display:block;
+  margin-top:10px;
+  color:var(--accent);
+}
+
+.about-h2 .blue-line{
+  color:var(--black);
+}
   .about-body {
     font-size: 1rem;
     line-height: 1.75;
@@ -389,10 +432,11 @@ footer .nav-logo .nav-logo-svg {
     line-height: 0.92;
     color: var(--white);
   }
-  .speaking-h2 em {
-    font-family: 'Playfair Display', serif;
-    font-style: italic; color: var(--accent);
-  }
+  .speaking-h2 em{
+  font-family:'Bebas Neue', sans-serif;
+  font-style:normal;
+  color:var(--accent);
+}
   .speaking-sub {
     font-size: 0.9rem; color: #a0b4cc; max-width: 300px; text-align: right;
     line-height: 1.6;
@@ -459,28 +503,198 @@ footer .nav-logo .nav-logo-svg {
   .topics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    gap: 22px;
   }
   .topic-card {
+    position: relative;
+    min-height: 540px;
+    overflow: hidden;
     background: var(--white);
-    padding: 48px 36px;
     border-bottom: 4px solid transparent;
-    transition: border-color 0.2s, background 0.2s;
-    cursor: default;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .topic-card:hover { border-color: var(--accent); background: #fff; }
+  .topic-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+  }
+  .topic-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 540px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+    transition: transform 0.45s ease, filter 0.45s ease;
+  }
+  .topic-card:hover img {
+    transform: scale(1.06);
+    filter: grayscale(0%);
+  }
+  .topic-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(29,61,112,0.9) 0%, rgba(29,61,112,0.28) 50%, rgba(29,61,112,0.05) 100%);
+    z-index: 1;
+  }
+  .topic-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 34px;
+    color: var(--white);
+  }
   .topic-num {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem; color: var(--border);
-    line-height: 1; margin-bottom: 20px;
+    font-size: 3rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 12px;
   }
   .topic-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem; letter-spacing: 0.03em;
-    color: var(--black); margin-bottom: 12px;
+    font-size: 1.85rem;
+    letter-spacing: 0.03em;
+    color: var(--white);
+    margin-bottom: 12px;
   }
   .topic-body {
-    font-size: 0.88rem; color: #4a6080; line-height: 1.65;
+    font-size: 0.9rem;
+    color: #d9e4f2;
+    line-height: 1.65;
+  }
+  .topic-click {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .topic-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 24, 45, 0.72);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+  }
+  .topic-popup.active { display: flex; }
+  .topic-popup-box {
+    background: var(--white);
+    color: var(--black);
+    max-width: 620px;
+    width: 100%;
+    padding: 42px;
+    border-top: 5px solid var(--accent);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+    position: relative;
+  }
+  .topic-popup-box h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    margin-bottom: 16px;
+    color: var(--black);
+  }
+  .topic-popup-box p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #3a4f6a;
+  }
+  .topic-popup-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    border: none;
+    background: transparent;
+    color: var(--black);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* ── VENTURE SLIDESHOW ── */
+  .venture-slider {
+    position: relative;
+    height: 560px;
+    overflow: hidden;
+    box-shadow: 16px 16px 0 var(--border);
+    background: var(--cream);
+  }
+  .venture-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .venture-slide.active { opacity: 1; }
+  .venture-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .venture-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(29,61,112,0.7), transparent 55%);
+  }
+  .venture-slide-caption {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    z-index: 2;
+    color: var(--white);
+  }
+  .venture-slide-caption strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    font-weight: normal;
+  }
+  .venture-slide-caption span {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slider-dots {
+    position: absolute;
+    right: 24px;
+    bottom: 28px;
+    z-index: 3;
+    display: flex;
+    gap: 9px;
+  }
+  .slider-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.55);
+    cursor: pointer;
+  }
+  .slider-dot.active { background: var(--accent); }
+
+  @media (max-width: 900px) {
+    .topics-grid { grid-template-columns: 1fr; }
+    .topic-card, .topic-card img { min-height: 430px; }
+    .venture-slider { height: 460px; }
+  }
+  @media (max-width: 600px) {
+    .topic-card, .topic-card img { min-height: 360px; }
+    .topic-content { padding: 24px; }
+    .topic-popup-box { padding: 32px 24px; }
+    .venture-slider { height: 340px; box-shadow: 8px 8px 0 var(--border); }
   }
 
   /* ── VENTURE ── */
@@ -1561,9 +1775,7 @@ nav > .nav-logo .nav-logo-svg,
     grid-template-columns: 1fr !important;
     display: grid;
   }
-  .topic-card {
-  padding: 22px;
-}
+
   .hero-right,
   .hero-panel,
   .hero-visual {
@@ -1777,41 +1989,48 @@ nav > .nav-logo .nav-logo-svg,
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left fade-up">
-    <div class="hero-eyebrow">Speaker  Entrepreneur</div>
+    <div class="hero-eyebrow">Founder · Educator · Industry Speaker</div>
+
     <h1 class="hero-h1">
-      The Voice<br>
-      <span class="accent-line">Industry</span>
-      <span class="thin-line">trusts.</span>
+      I teach.<br>
+      <span class="accent-line">I mentor.</span>
+      <span class="thin-line">I speak.</span>
     </h1>
+
     <p class="hero-desc">
-      One of India's youngest voices shaping the future of industrial tech, quality engineering, and AI — from IIT Madras stages to global industry conferences.
+      I am a Founder from IIT Madras, running AI/ML programs for budding engineers, leading entrepreneurship education across the nation, and speaking on digitalising manufacturing ecosystems from India to global stages including Germany, Luxembourg, the Middle East and Stanford (U.S.).
     </p>
+
+    <div class="hero-highlight-box">
+      <div class="hero-highlight-item">
+        <strong>Lead Faculty — AI/ML</strong>
+        <span>Topengineers · Chennai & Bangalore</span>
+      </div>
+
+      <div class="hero-highlight-item">
+        <strong>Entrepreneurship Lead Faculty</strong>
+        <span>ThinkStartup</span>
+      </div>
+
+      <div class="hero-highlight-item">
+        <strong>Co-Founder & CEO</strong>
+        <span>TIQWorld — Digital Layer for Manufacturing Quality Ecosystems</span>
+      </div>
+    </div>
+
     <div class="hero-actions">
       <a href="#speaking" class="btn-primary">See Him Speak</a>
       <a href="#about" class="btn-outline">His Story</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">25<span>+</span></div>
-        <div class="stat-label">Keynotes Delivered</div>
-      </div>
-      <div>
-        <div class="stat-num">3<span>K+</span></div>
-        <div class="stat-label">Professionals Reached</div>
-      </div>
-      <div>
-        <div class="stat-num">1<span>ST</span></div>
-        <div class="stat-label">Co-Founder, TIQWorld</div>
-      </div>
-    </div>
   </div>
+
   <div class="hero-right">
-    <img class="hero-img-main" src="IMG_0386.JPG"/>
+    <img class="hero-img-main" src="IMG_0386.JPG" alt="Srijan Tiwari"/>
     <div class="hero-img-overlay"></div>
     <div class="hero-badge">
-      <span>Featured at</span>
+      <span>Global Industry Speaker</span>
       <strong>IIT Madras</strong>
-      <span>ISNT NDE  Industry Meets</span>
+      <span>Germany · Luxembourg · Middle East · Stanford</span>
     </div>
   </div>
 </section>
@@ -1848,7 +2067,7 @@ nav > .nav-logo .nav-logo-svg,
   </div>
   <div class="about-content fade-up">
     <div class="section-tag">About Srijan</div>
-    <h2 class="about-h2">Not waiting<br>for <em>permission.</em></h2>
+    <h2 class="about-h2">Researcher by day<br><em class="blue-line">Founder by deadline</em> <em>Educator by choice.</em></h2>
     <p class="about-body">
       Srijan Tiwari is a speaker, educator, and entrepreneur who believes the industrial world deserves better talent infrastructure. At an age when most people are still finding their footing, Srijan is already keynoting at national conferences, teaching AI at IIT Madras, and co-founding a startup that's reshaping how the industry hires and certifies.
     </p>
@@ -1881,7 +2100,11 @@ nav > .nav-logo .nav-logo-svg,
   <div class="speaking-header fade-up">
     <div>
       <div class="section-tag-light">On Stage</div>
-      <h2 class="speaking-h2">He doesn't<br>just <em>present.</em><br>He moves rooms.</h2>
+      <h2 class="speaking-h2">
+  <em>Youngest</em><br>
+  industry keynote speaker.<br>
+  From India, for the world!
+</h2>
     </div>
     <p class="speaking-sub">From intimate workshops to national conferences — Srijan's presence commands attention and inspires action.</p>
   </div>
@@ -1910,76 +2133,90 @@ nav > .nav-logo .nav-logo-svg,
     <div class="topics-tag">Speaking Topics</div>
     <h2 class="topics-h2">What he <em>speaks</em> about.</h2>
   </div>
+
   <div class="topics-grid fade-up">
-    <div class="topic-card">
-      <div class="topic-num">01</div>
-      <div class="topic-title">AI  The Future of Work</div>
-      <div class="topic-body">LLMs, AI agents, diffusion models, and what they mean for every professional — demystified without losing depth. From boardrooms to classrooms.</div>
+    <div class="topic-card" data-title="AI, Work & Quality Engineering" data-text="Srijan explains how AI, LLMs, agents, diffusion models, and automation are changing the future of work. He connects these ideas with real industrial use cases, quality inspection, NDT, structural health monitoring, and engineering decision-making.">
+      <img src="IMG_0387.JPG" alt="AI and quality engineering speaking topic">
+      <div class="topic-overlay"></div>
+      <div class="topic-content">
+        <div class="topic-num">01</div>
+        <div class="topic-title">AI, Work & Quality Engineering</div>
+        <div class="topic-body">AI, future of work, NDT, quality engineering, inspection, and industrial transformation.</div>
+        <span class="topic-click">Click image to read more</span>
+      </div>
     </div>
-    <div class="topic-card">
-      <div class="topic-num">02</div>
-      <div class="topic-title">Hybrid Learning  Certification</div>
-      <div class="topic-body">How does online training translate to real-world expertise? The critical questions facing professionals, recruiters, and trainers in high-stakes technical industries.</div>
+
+    <div class="topic-card" data-title="Hybrid Learning & Certification" data-text="This topic combines hybrid learning, skill validation, certification systems, and training models. Srijan talks about how online learning can become industry-ready only when it is supported by real assessments, verified skills, and practical exposure.">
+      <img src="IMG_0408.JPG" alt="Hybrid learning and certification speaking topic">
+      <div class="topic-overlay"></div>
+      <div class="topic-content">
+        <div class="topic-num">02</div>
+        <div class="topic-title">Hybrid Learning & Certification</div>
+        <div class="topic-body">Training, certification, skill verification, workshops, and industry-ready learning systems.</div>
+        <span class="topic-click">Click image to read more</span>
+      </div>
     </div>
-    <div class="topic-card">
-      <div class="topic-num">03</div>
-      <div class="topic-title">Young Entrepreneurship</div>
-      <div class="topic-body">Building at 25 — the mindset, the mistakes, and the momentum. What it takes to move fast in industries that have moved slow for decades.</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-num">04</div>
-      <div class="topic-title">Quality Engineering Tech</div>
-      <div class="topic-body">Non-destructive evaluation, structural health monitoring, and how AI is transforming inspection and quality assurance across manufacturing.</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-num">05</div>
-      <div class="topic-title">Talent  Hiring in Deep Tech</div>
-      <div class="topic-body">Why the talent gap in industrial tech is a solvable problem — and what platforms, systems, and mindsets make the difference.</div>
-    </div>
-    <div class="topic-card">
-      <div class="topic-num">06</div>
-      <div class="topic-title">Custom Workshop</div>
-      <div class="topic-body">Tailored sessions for your team, institution, or conference. Deep-dive formats, interactive panels, or keynote formats available.</div>
+
+    <div class="topic-card" data-title="Entrepreneurship & Deep-Tech Talent" data-text="This topic merges young entrepreneurship, deep-tech hiring, talent gaps, and custom workshops. Srijan shares what it takes to build at a young age, how industrial talent marketplaces can solve hiring problems, and how institutions can prepare students for real industry expectations.">
+      <img src="IMG_4938.JPEG" alt="Entrepreneurship and deep-tech talent speaking topic">
+      <div class="topic-overlay"></div>
+      <div class="topic-content">
+        <div class="topic-num">03</div>
+        <div class="topic-title">Entrepreneurship & Deep-Tech Talent</div>
+        <div class="topic-body">Young entrepreneurship, hiring in deep tech, talent gaps, and custom industry workshops.</div>
+        <span class="topic-click">Click image to read more</span>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="topic-popup" id="topicPopup">
+  <div class="topic-popup-box">
+    <button class="topic-popup-close" id="topicPopupClose">×</button>
+    <h3 id="topicPopupTitle"></h3>
+    <p id="topicPopupText"></p>
+  </div>
+</div>
 
 <!-- VENTURE -->
 <section id="venture" class="venture">
   <div class="venture-content fade-up">
     <div class="section-tag">Co-Founded Venture</div>
-    <h2 class="venture-h2">Meet<br><em>TIQWorld</em> —<br>Where talent<br>meets trust.</h2>
+    <h2 class="venture-h2">Inside<br><em>TIQWorld</em><br>in motion.</h2>
     <p class="venture-body">
-      TIQWorld is an AI-powered certification and recruitment platform built for manufacturing and industrial engineering — the industry Srijan grew up inside.
+      A visual look at TIQWorld's journey — from industrial conversations and launch moments to the people, stages, and ideas behind the platform.
     </p>
     <p class="venture-body">
-      It's not just a startup. It's proof that deep industry knowledge, when combined with technology, can transform how a whole sector recruits, certifies, and grows its talent base.
+      The slideshow replaces the old static TIQWorld text block and keeps the section more dynamic, founder-led, and visual.
     </p>
-    <div class="venture-features">
-      <div class="vf-item">
-        <div class="vf-dot"></div>
-        <div class="vf-text"><strong>Train to international codes</strong> — ASNT, ISNT, and beyond</div>
-      </div>
-      <div class="vf-item">
-        <div class="vf-dot"></div>
-        <div class="vf-text"><strong>Verify skills</strong> with AI-powered assessments</div>
-      </div>
-      <div class="vf-item">
-        <div class="vf-dot"></div>
-        <div class="vf-text"><strong>Hire verified talent</strong> from a trusted marketplace</div>
-      </div>
-      <div class="vf-item">
-        <div class="vf-dot"></div>
-        <div class="vf-text"><strong>Equip teams</strong> with ML-assisted procurement tools</div>
-      </div>
-    </div>
     <a href="TIQWorld.html" class="btn-primary">Explore TIQWorld →</a>
   </div>
+
   <div class="venture-image fade-up">
-    <img class="vent-img" src="IMG_4965.JPEG"/>
-    <div class="vent-tag">
-      <strong>TIQ</strong>
-      WORLD<br>Pvt. Ltd.
+    <div class="venture-slider">
+      <div class="venture-slide active">
+        <img src="IMG_4965.JPEG" alt="TIQWorld moment one">
+        <div class="venture-slide-caption"><strong>TIQWorld</strong><span>Where talent meets trust</span></div>
+      </div>
+      <div class="venture-slide">
+        <img src="IMG_4967.JPEG" alt="TIQWorld moment two">
+        <div class="venture-slide-caption"><strong>Industry</strong><span>Built for real engineering teams</span></div>
+      </div>
+      <div class="venture-slide">
+        <img src="IMG_2849.JPEG" alt="TIQWorld moment three">
+        <div class="venture-slide-caption"><strong>Talent</strong><span>Training, verification, hiring</span></div>
+      </div>
+      <div class="venture-slide">
+        <img src="IMG_0387.JPG" alt="TIQWorld moment four">
+        <div class="venture-slide-caption"><strong>Founder Voice</strong><span>Speaking for industrial change</span></div>
+      </div>
+
+      <div class="slider-dots">
+        <button class="slider-dot active" data-slide="0"></button>
+        <button class="slider-dot" data-slide="1"></button>
+        <button class="slider-dot" data-slide="2"></button>
+        <button class="slider-dot" data-slide="3"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -2101,6 +2338,55 @@ nav > .nav-logo .nav-logo-svg,
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   document.querySelector('.hero .fade-up').classList.add('visible');
+
+  // Topic image popup
+  const topicPopup = document.getElementById('topicPopup');
+  const topicPopupTitle = document.getElementById('topicPopupTitle');
+  const topicPopupText = document.getElementById('topicPopupText');
+  const topicPopupClose = document.getElementById('topicPopupClose');
+
+  document.querySelectorAll('.topic-card').forEach(card => {
+    card.addEventListener('click', () => {
+      topicPopupTitle.textContent = card.dataset.title;
+      topicPopupText.textContent = card.dataset.text;
+      topicPopup.classList.add('active');
+    });
+  });
+
+  topicPopupClose.addEventListener('click', () => {
+    topicPopup.classList.remove('active');
+  });
+
+  topicPopup.addEventListener('click', (event) => {
+    if (event.target === topicPopup) {
+      topicPopup.classList.remove('active');
+    }
+  });
+
+  // TIQWorld slideshow
+  const slides = document.querySelectorAll('.venture-slide');
+  const dots = document.querySelectorAll('.slider-dot');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      showSlide(Number(dot.dataset.slide));
+    });
+  });
+
+  setInterval(() => {
+    const nextSlide = (currentSlide + 1) % slides.length;
+    showSlide(nextSlide);
+  }, 3000);
 </script>
 
 </body>
