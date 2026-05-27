@@ -1115,6 +1115,213 @@ nav > .nav-logo .nav-logo-svg,
     font-size: clamp(2.5rem, 8vw, 4rem) !important;
   }
 }
+
+
+/* =========================================================
+   CONSISTENT GLOBAL HEADER FIX — APPLIED ACROSS ALL PAGES
+   Keeps logo, nav links, CTA and mobile header aligned.
+========================================================= */
+nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  height: 72px !important;
+  min-height: 72px !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  padding: 0 5vw !important;
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) 220px !important;
+  align-items: center !important;
+  gap: 18px !important;
+  background: rgba(247,247,247,0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  overflow: visible !important;
+}
+
+nav .nav-logo,
+nav > .nav-logo {
+  grid-column: 1 !important;
+  width: 150px !important;
+  min-width: 150px !important;
+  height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow: hidden !important;
+  flex: none !important;
+}
+
+nav > .nav-logo .nav-logo-svg,
+nav .nav-logo-svg {
+  width: 150px !important;
+  height: auto !important;
+  max-height: 96px !important;
+  object-fit: contain !important;
+  transform: scale(1.1) !important;
+  transform-origin: center !important;
+  display: block !important;
+}
+
+nav .nav-links {
+  grid-column: 2 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(16px, 2vw, 30px) !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  flex: none !important;
+}
+
+nav .nav-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 72px !important;
+  color: var(--black) !important;
+  text-decoration: none !important;
+  font-size: clamp(0.68rem, 0.8vw, 0.82rem) !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  color: var(--accent) !important;
+}
+
+nav .nav-right {
+  grid-column: 3 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  flex: none !important;
+}
+
+nav .nav-right .nav-logo,
+nav .nav-right .nav-logo:empty {
+  display: none !important;
+}
+
+nav .nav-cta {
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 20px !important;
+  background: var(--black) !important;
+  color: var(--white) !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+nav .nav-cta:hover {
+  background: var(--accent) !important;
+  color: var(--white) !important;
+}
+
+@media (max-width: 1180px) {
+  nav {
+    grid-template-columns: 150px minmax(0, 1fr) 190px !important;
+    padding: 0 4vw !important;
+    gap: 14px !important;
+  }
+  nav .nav-logo,
+  nav > .nav-logo {
+    width: 130px !important;
+    min-width: 130px !important;
+  }
+  nav > .nav-logo .nav-logo-svg,
+  nav .nav-logo-svg {
+    width: 130px !important;
+  }
+  nav .nav-links {
+    gap: 14px !important;
+  }
+  nav .nav-links a {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  nav .nav-cta {
+    padding: 10px 14px !important;
+    font-size: 0.66rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    height: 72px !important;
+    min-height: 72px !important;
+    grid-template-columns: 130px 1fr !important;
+    padding: 0 20px !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+  }
+  nav .nav-logo,
+  nav > .nav-logo {
+    width: 118px !important;
+    min-width: 118px !important;
+    height: 72px !important;
+  }
+  nav > .nav-logo .nav-logo-svg,
+  nav .nav-logo-svg {
+    width: 118px !important;
+    max-height: 82px !important;
+  }
+  nav .nav-links {
+    display: none !important;
+  }
+  nav .nav-right {
+    grid-column: 2 !important;
+  }
+  nav .nav-cta {
+    min-height: 38px !important;
+    padding: 9px 12px !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.09em !important;
+    max-width: 190px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0 14px !important;
+    grid-template-columns: 108px 1fr !important;
+  }
+  nav .nav-logo,
+  nav > .nav-logo {
+    width: 102px !important;
+    min-width: 102px !important;
+  }
+  nav > .nav-logo .nav-logo-svg,
+  nav .nav-logo-svg {
+    width: 102px !important;
+  }
+  nav .nav-cta {
+    max-width: 165px !important;
+    padding: 9px 10px !important;
+    font-size: 0.58rem !important;
+  }
+}
 </style>
 </head>
 <body>

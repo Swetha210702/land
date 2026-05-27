@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Srijan Tiwari — Speaker · Entrepreneur · Educator</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Srijan Tiwari — Impact Entrepreneur · Speaker · AI Educator</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Playfair+Display:ital,wght@0,700;0,900;1,700&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
   --black: #1D3D70;
@@ -1956,379 +1957,537 @@ nav > .nav-logo .nav-logo-svg,
     font-size: clamp(2.5rem, 8vw, 4rem) !important;
   }
 }
+
+
+/* =========================================================
+   CONSISTENT GLOBAL HEADER FIX — APPLIED ACROSS ALL PAGES
+   Keeps logo, nav links, CTA and mobile header aligned.
+========================================================= */
+nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  height: 72px !important;
+  min-height: 72px !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  padding: 0 5vw !important;
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) 220px !important;
+  align-items: center !important;
+  gap: 18px !important;
+  background: rgba(247,247,247,0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  overflow: visible !important;
+}
+
+nav .nav-logo,
+nav > .nav-logo {
+  grid-column: 1 !important;
+  width: 150px !important;
+  min-width: 150px !important;
+  height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow: hidden !important;
+  flex: none !important;
+}
+
+nav > .nav-logo .nav-logo-svg,
+nav .nav-logo-svg {
+  width: 150px !important;
+  height: auto !important;
+  max-height: 96px !important;
+  object-fit: contain !important;
+  transform: scale(1.1) !important;
+  transform-origin: center !important;
+  display: block !important;
+}
+
+nav .nav-links {
+  grid-column: 2 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(16px, 2vw, 30px) !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  flex: none !important;
+}
+
+nav .nav-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 72px !important;
+  color: var(--black) !important;
+  text-decoration: none !important;
+  font-size: clamp(0.68rem, 0.8vw, 0.82rem) !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+  color: var(--accent) !important;
+}
+
+nav .nav-right {
+  grid-column: 3 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  flex: none !important;
+}
+
+nav .nav-right .nav-logo,
+nav .nav-right .nav-logo:empty {
+  display: none !important;
+}
+
+nav .nav-cta {
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 20px !important;
+  background: var(--black) !important;
+  color: var(--white) !important;
+  border: 0 !important;
+  text-decoration: none !important;
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+nav .nav-cta:hover {
+  background: var(--accent) !important;
+  color: var(--white) !important;
+}
+
+@media (max-width: 1180px) {
+  nav {
+    grid-template-columns: 150px minmax(0, 1fr) 190px !important;
+    padding: 0 4vw !important;
+    gap: 14px !important;
+  }
+  nav .nav-logo,
+  nav > .nav-logo {
+    width: 130px !important;
+    min-width: 130px !important;
+  }
+  nav > .nav-logo .nav-logo-svg,
+  nav .nav-logo-svg {
+    width: 130px !important;
+  }
+  nav .nav-links {
+    gap: 14px !important;
+  }
+  nav .nav-links a {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  nav .nav-cta {
+    padding: 10px 14px !important;
+    font-size: 0.66rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    height: 72px !important;
+    min-height: 72px !important;
+    grid-template-columns: 130px 1fr !important;
+    padding: 0 20px !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+  }
+  nav .nav-logo,
+  nav > .nav-logo {
+    width: 118px !important;
+    min-width: 118px !important;
+    height: 72px !important;
+  }
+  nav > .nav-logo .nav-logo-svg,
+  nav .nav-logo-svg {
+    width: 118px !important;
+    max-height: 82px !important;
+  }
+  nav .nav-links {
+    display: none !important;
+  }
+  nav .nav-right {
+    grid-column: 2 !important;
+  }
+  nav .nav-cta {
+    min-height: 38px !important;
+    padding: 9px 12px !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.09em !important;
+    max-width: 190px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0 14px !important;
+    grid-template-columns: 108px 1fr !important;
+  }
+  nav .nav-logo,
+  nav > .nav-logo {
+    width: 102px !important;
+    min-width: 102px !important;
+  }
+  nav > .nav-logo .nav-logo-svg,
+  nav .nav-logo-svg {
+    width: 102px !important;
+  }
+  nav .nav-cta {
+    max-width: 165px !important;
+    padding: 9px 10px !important;
+    font-size: 0.58rem !important;
+  }
+}
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
-  <!-- Left: Srijan Speaks logo SVG inline -->
-  <!-- Left: Srijan Speaks logo as image -->
-  <a href="index.html" class="nav-logo" aria-label="Srijan Speaks Home">
-    <img 
-      class="nav-logo-svg" 
-      src="image.png" 
-      alt="Srijan Speaks Logo"
-    >
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="Talks.html">TALKS</a></li>
-    <li><a href="Teaching.html">TEACHING</a></li>
-    <li><a href="TIQWorld.html">TIQWORLD</a></li>
-    <li><a href="Blogs.html">BLOG</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
-
-  <!-- Right: logo + CTA -->
-  <div class="nav-right">
-   
-    <a href="#contact" class="nav-cta">Book a Session</a>
-  </div>
+<!-- Left: Srijan Speaks logo SVG inline -->
+<!-- Left: Srijan Speaks logo as image -->
+<a aria-label="Srijan Speaks Home" class="nav-logo" href="index.html">
+<img alt="Srijan Speaks Logo" class="nav-logo-svg" src="image.png"/>
+</a>
+<ul class="nav-links">
+<li><a href="#about">ABOUT</a></li>
+<li><a href="Talks.html">TALKS</a></li>
+<li><a href="Teaching.html">TEACHING</a></li>
+<li><a href="TIQWorld.html">TIQWORLD</a></li>
+<li><a href="Blogs.html">BLOG</a></li>
+<li><a href="#contact">CONTACT</a></li>
+</ul>
+<!-- Right: logo + CTA -->
+<div class="nav-right">
+<a class="nav-cta" href="#contact">Book a Session</a>
+</div>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left fade-up">
-    <div class="hero-eyebrow">Founder · Educator · Industry Speaker</div>
-
-    <h1 class="hero-h1">
-      I teach.<br>
-      <span class="accent-line">I mentor.</span>
-      <span class="thin-line">I speak.</span>
-    </h1>
-
-    <p class="hero-desc">
-      I am a Founder from IIT Madras, running AI/ML programs for budding engineers, leading entrepreneurship education across the nation, and speaking on digitalising manufacturing ecosystems from India to global stages including Germany, Luxembourg, the Middle East and Stanford (U.S.).
-    </p>
-
-    <div class="hero-highlight-box">
-      <div class="hero-highlight-item">
-        <strong>Lead Faculty — AI/ML</strong>
-        <span>Topengineers · Chennai & Bangalore</span>
-      </div>
-
-      <div class="hero-highlight-item">
-        <strong>Entrepreneurship Lead Faculty</strong>
-        <span>ThinkStartup</span>
-      </div>
-
-      <div class="hero-highlight-item">
-        <strong>Co-Founder & CEO</strong>
-        <span>TIQWorld — Digital Layer for Manufacturing Quality Ecosystems</span>
-      </div>
-    </div>
-
-    <div class="hero-actions">
-      <a href="#speaking" class="btn-primary">See Him Speak</a>
-      <a href="#about" class="btn-outline">His Story</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <img class="hero-img-main" src="IMG_0386.JPG" alt="Srijan Tiwari"/>
-    <div class="hero-img-overlay"></div>
-    <div class="hero-badge">
-      <span>Global Industry Speaker</span>
-      <strong>IIT Madras</strong>
-      <span>Germany · Luxembourg · Middle East · Stanford</span>
-    </div>
-  </div>
+<div class="hero-left fade-up">
+<div class="hero-eyebrow">Founder · Educator · Industry Speaker</div>
+<h1 class="hero-h1">
+      I teach.<br/>
+<span class="accent-line">I mentor.</span>
+<span class="thin-line">I speak.</span>
+</h1>
+<p class="hero-desc">I am an IIT Madras entrepreneur building at the intersection of AI, manufacturing quality, NDE 4.0, and real-world skill transformation. Through TIQWorld, teaching, mentorship, and global speaking rooms, I work on one mission: turning talent, technology, and trust into measurable industrial impact.</p>
+<div class="hero-highlight-box">
+<div class="hero-highlight-item">
+<strong>Lead Faculty — AI/ML</strong>
+<span>Topengineers · Chennai &amp; Bangalore</span>
+</div>
+<div class="hero-highlight-item">
+<strong>Entrepreneurship Lead Faculty</strong>
+<span>ThinkStartup</span>
+</div>
+<div class="hero-highlight-item">
+<strong>Co-Founder &amp; CEO</strong>
+<span>TIQWorld — Digital Layer for Manufacturing Quality Ecosystems</span>
+</div>
+</div>
+<div class="hero-actions">
+<a class="btn-primary" href="#speaking">See Me Speak</a>
+<a class="btn-outline" href="#about">My Story</a>
+</div>
+</div>
+<div class="hero-right">
+<img alt="Srijan Tiwari" class="hero-img-main" src="IMG_0386.JPG">
+<div class="hero-img-overlay"></div>
+<div class="hero-badge">
+<span>Impact Entrepreneur</span>
+<strong>IIT Madras</strong>
+<span>Germany · Luxembourg · Middle East · Stanford</span>
+</div>
+</img></div>
 </section>
-
 <!-- MARQUEE STRIP -->
 <div class="strip">
-  <div class="strip-inner">
-    <span class="strip-item">Speaker<span class="sep"> ✦</span></span>
-    <span class="strip-item">Entrepreneur<span class="sep"> ✦</span></span>
-    <span class="strip-item">AI Educator<span class="sep"> ✦</span></span>
-    <span class="strip-item">Co-Founder TIQWorld<span class="sep"> ✦</span></span>
-    <span class="strip-item">IIT Madras<span class="sep"> ✦</span></span>
-    <span class="strip-item">Quality Engineering<span class="sep"> ✦</span></span>
-    <span class="strip-item">Industry Disruptor<span class="sep"> ✦</span></span>
-    <span class="strip-item">Speaker<span class="sep"> ✦</span></span>
-    <span class="strip-item">Entrepreneur<span class="sep"> ✦</span></span>
-    <span class="strip-item">AI Educator<span class="sep"> ✦</span></span>
-    <span class="strip-item">Co-Founder TIQWorld<span class="sep"> ✦</span></span>
-    <span class="strip-item">IIT Madras<span class="sep"> ✦</span></span>
-    <span class="strip-item">Quality Engineering<span class="sep"> ✦</span></span>
-    <span class="strip-item">Industry Disruptor<span class="sep"> ✦</span></span>
-  </div>
+<div class="strip-inner">
+<span class="strip-item">Speaker<span class="sep"> ✦</span></span>
+<span class="strip-item">Entrepreneur<span class="sep"> ✦</span></span>
+<span class="strip-item">AI Educator<span class="sep"> ✦</span></span>
+<span class="strip-item">Co-Founder TIQWorld<span class="sep"> ✦</span></span>
+<span class="strip-item">IIT Madras<span class="sep"> ✦</span></span>
+<span class="strip-item">Quality Engineering<span class="sep"> ✦</span></span>
+<span class="strip-item">Industry Disruptor<span class="sep"> ✦</span></span>
+<span class="strip-item">Speaker<span class="sep"> ✦</span></span>
+<span class="strip-item">Entrepreneur<span class="sep"> ✦</span></span>
+<span class="strip-item">AI Educator<span class="sep"> ✦</span></span>
+<span class="strip-item">Co-Founder TIQWorld<span class="sep"> ✦</span></span>
+<span class="strip-item">IIT Madras<span class="sep"> ✦</span></span>
+<span class="strip-item">Quality Engineering<span class="sep"> ✦</span></span>
+<span class="strip-item">Industry Disruptor<span class="sep"> ✦</span></span>
 </div>
-
+</div>
 <!-- ABOUT -->
-<section id="about" class="about">
-  <div class="about-images fade-up">
-    <img class="ab-img-1" src="IMG_0701.JPG"/>
-    <img class="ab-img-2" src="IMG_7256.JPEG"/>
-    <div class="ab-label">
-      <strong>25</strong>
-      Years Old<br>Building Tomorrow
+<section class="about" id="about">
+<div class="about-images fade-up">
+<img class="ab-img-1" src="IMG_0701.JPG"/>
+<img class="ab-img-2" src="IMG_7256.JPEG"/>
+<div class="ab-label">
+<strong>25</strong>
+      Years Old<br/>Building Tomorrow
     </div>
-  </div>
-  <div class="about-content fade-up">
-    <div class="section-tag">About Srijan</div>
-    <h2 class="about-h2">Researcher by day<br><em class="blue-line">Founder by deadline</em> <em>Educator by choice.</em></h2>
-    <p class="about-body">
-      Srijan Tiwari is a speaker, educator, and entrepreneur who believes the industrial world deserves better talent infrastructure. At an age when most people are still finding their footing, Srijan is already keynoting at national conferences, teaching AI at IIT Madras, and co-founding a startup that's reshaping how the industry hires and certifies.
-    </p>
-    <p class="about-body">
-      His talks blend raw energy with deep industry insight — whether he's breaking down diffusion models to a classroom or challenging a room of NDT professionals to rethink certification standards.
-    </p>
-    <div class="about-pillars">
-      <div class="pillar">
-        <div class="pillar-title">Public Speaker</div>
-        <div class="pillar-body">National stages. Real stories. Zero filler. He moves audiences.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-title">AI Educator</div>
-        <div class="pillar-body">From LLMs to diffusion — teaching tech that actually matters.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-title">Entrepreneur</div>
-        <div class="pillar-body">Co-founder of TIQWorld — building world-class quality talent.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-title">Industry Voice</div>
-        <div class="pillar-body">Trusted by engineers, recruiters, and institutions alike.</div>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="about-content fade-up">
+<div class="section-tag">About Me</div>
+<h2 class="about-h2">Researcher by day<br/><em class="blue-line">Founder by deadline</em> <em>Educator by choice.</em></h2>
+<p class="about-body">I’m Srijan Tiwari — a researcher, founder, speaker, and educator from IIT Madras. I don’t see entrepreneurship as just building a company; I see it as building systems that outlast conversations. My work sits where AI, NDE 4.0, manufacturing quality, certification, and skill verification meet.</p>
+<p class="about-body">I’ve cleared my way into India’s top technical institutions, chosen the research-and-startup route, and built TIQWorld to solve a problem I kept seeing up close: industry needs trusted talent, students need real exposure, and the quality ecosystem needs a digital layer that connects both with credibility.</p>
+<div class="about-pillars">
+<div class="pillar">
+<div class="pillar-title">Public Speaker</div>
+<div class="pillar-body">I bring national and international rooms into one conversation: impact, technology, and execution.</div>
+</div>
+<div class="pillar">
+<div class="pillar-title">AI Educator</div>
+<div class="pillar-body">I teach AI/ML, agents, LLMs, diffusion models, and product thinking in a way engineers can actually use.</div>
+</div>
+<div class="pillar">
+<div class="pillar-title">Entrepreneur</div>
+<div class="pillar-body">I’m building TIQWorld as a trust layer for inspection, manufacturing quality, training, verification, and hiring.</div>
+</div>
+<div class="pillar">
+<div class="pillar-title">Industry Voice</div>
+<div class="pillar-body">I speak from the field — with researchers, recruiters, founders, and engineers all in mind.</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- SPEAKING -->
-<section id="speaking" class="speaking">
-  <div class="speaking-header fade-up">
-    <div>
-      <div class="section-tag-light">On Stage</div>
-      <h2 class="speaking-h2">
-  <em>Youngest</em><br>
-  industry keynote speaker.<br>
+<section class="speaking" id="speaking">
+<div class="speaking-header fade-up">
+<div>
+<div class="section-tag-light">On Stage</div>
+<h2 class="speaking-h2">
+<em>Youngest</em><br/>
+  industry keynote speaker.<br/>
   From India, for the world!
 </h2>
-    </div>
-    <p class="speaking-sub">Have stood on international stages at Stanford, Berlin, and Singapore. From Indian engineering colleges, to business professionals, to global audiences — the audience changes. The conviction does not.</p>
-  </div>
-  <div class="speaking-grid fade-up">
-    <div class="sg-item">
-      <img class="sg-img" src="IMG_0387.JPG"/>
-      <div class="sg-overlay"></div>
-      <div class="sg-caption"><strong>TIQWorld Launch</strong>National Demo Day</div>
-    </div>
-    <div class="sg-item">
-      <img class="sg-img" src="IMG_0408.JPG"/>
-      <div class="sg-overlay"></div>
-      <div class="sg-caption"><strong>Keynote</strong>Industry Conference</div>
-    </div>
-    <div class="sg-item">
-      <img class="sg-img" src="IMG_4938.JPEG"/>
-      <div class="sg-overlay"></div>
-      <div class="sg-caption"><strong>ISNT 35th Annual</strong>Mumbai 2025</div>
-    </div>
-  </div>
+</div>
+<p class="speaking-sub">I’ve spoken across student rooms, industry forums, startup ecosystems, and global learning spaces — from India to Germany, Luxembourg, the Middle East, Singapore, and the U.S. The audience changes, but my conviction stays the same: technology only matters when it creates capability.</p>
+</div>
+<div class="speaking-grid fade-up">
+<div class="sg-item">
+<img class="sg-img" src="IMG_0387.JPG"/>
+<div class="sg-overlay"></div>
+<div class="sg-caption"><strong>TIQWorld Launch</strong>National Demo Day</div>
+</div>
+<div class="sg-item">
+<img class="sg-img" src="IMG_0408.JPG"/>
+<div class="sg-overlay"></div>
+<div class="sg-caption"><strong>Keynote</strong>Industry Conference</div>
+</div>
+<div class="sg-item">
+<img class="sg-img" src="IMG_4938.JPEG"/>
+<div class="sg-overlay"></div>
+<div class="sg-caption"><strong>ISNT 35th Annual</strong>Mumbai 2025</div>
+</div>
+</div>
 </section>
-
 <!-- TOPICS -->
 <section class="topics">
-  <div class="topics-header fade-up">
-    <div class="topics-tag">Expertise</div>
-    <h2 class="topics-h2">MY <em>areas</em><br>OF EXPERTISE.</h2>
-  </div>
-
-  <div class="topics-grid fade-up">
-    <div class="topic-card" data-title="AI/ML & Data Science Workshops" data-text="Srijan explains how AI, LLMs, agents, diffusion models, and automation are changing the future of work. He connects these ideas with real industrial use cases, quality inspection, NDT, structural health monitoring, and engineering decision-making.">
-      <img src="IMG_0387.JPG" alt="AI and quality engineering speaking topic">
-      <div class="topic-overlay"></div>
-      <div class="topic-content">
-        <div class="topic-num">01</div>
-        <div class="topic-title">AI/ML & Data Science Workshops</div>
-        <div class="topic-body">AI, future of work, NDT, quality engineering, inspection, and industrial transformation.</div>
-        <span class="topic-click">Click image to read more</span>
-      </div>
-    </div>
-
-    <div class="topic-card" data-title="Entrepreneurship and Startups Mentorship" data-text="This topic combines hybrid learning, skill validation, certification systems, and training models. Srijan talks about how online learning can become industry-ready only when it is supported by real assessments, verified skills, and practical exposure.">
-      <img src="IMG_0408.JPG" alt="Hybrid learning and certification speaking topic">
-      <div class="topic-overlay"></div>
-      <div class="topic-content">
-        <div class="topic-num">02</div>
-        <div class="topic-title">Entrepreneurship and Startups Mentorship</div>
-        <div class="topic-body">Training, certification, skill verification, workshops, and industry-ready learning systems.</div>
-        <span class="topic-click">Click image to read more</span>
-      </div>
-    </div>
-
-    <div class="topic-card" data-title="Digitalization in Manufacturing Quality Ecosystems" data-text="This topic merges young entrepreneurship, deep-tech hiring, talent gaps, and custom workshops. Srijan shares what it takes to build at a young age, how industrial talent marketplaces can solve hiring problems, and how institutions can prepare students for real industry expectations.">
-      <img src="IMG_4938.JPEG" alt="Entrepreneurship and deep-tech talent speaking topic">
-      <div class="topic-overlay"></div>
-      <div class="topic-content">
-        <div class="topic-num">03</div>
-        <div class="topic-title">Digitalization in Manufacturing Quality Ecosystems</div>
-        <div class="topic-body">Young entrepreneurship, hiring in deep tech, talent gaps, and custom industry workshops.</div>
-        <span class="topic-click">Click image to read more</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="topic-popup" id="topicPopup">
-  <div class="topic-popup-box">
-    <button class="topic-popup-close" id="topicPopupClose">×</button>
-    <h3 id="topicPopupTitle"></h3>
-    <p id="topicPopupText"></p>
-  </div>
+<div class="topics-header fade-up">
+<div class="topics-tag">Expertise</div>
+<h2 class="topics-h2">MY <em>areas</em><br/>OF EXPERTISE.</h2>
 </div>
-
-<!-- VENTURE -->
-<section id="venture" class="venture">
-  <div class="venture-content fade-up">
-    <div class="section-tag">Co-Founded Venture</div>
-    <h2 class="venture-h2">Inside<br><em>TIQWorld</em><br>in motion.</h2>
-    <p class="venture-body">
-      A visual look at TIQWorld's journey — from industrial conversations and launch moments to the people, stages, and ideas behind the platform.
-    </p>
-    <p class="venture-body">
-      The slideshow replaces the old static TIQWorld text block and keeps the section more dynamic, founder-led, and visual.
-    </p>
-    <a href="TIQWorld.html" class="btn-primary">Explore TIQWorld →</a>
-  </div>
-
-  <div class="venture-image fade-up">
-    <div class="venture-slider">
-      <div class="venture-slide active">
-        <img src="IMG_4965.JPEG" alt="TIQWorld moment one">
-        <div class="venture-slide-caption"><strong>TIQWorld</strong><span>Where talent meets trust</span></div>
-      </div>
-      <div class="venture-slide">
-        <img src="IMG_4967.JPEG" alt="TIQWorld moment two">
-        <div class="venture-slide-caption"><strong>Industry</strong><span>Built for real engineering teams</span></div>
-      </div>
-      <div class="venture-slide">
-        <img src="IMG_2849.JPEG" alt="TIQWorld moment three">
-        <div class="venture-slide-caption"><strong>Talent</strong><span>Training, verification, hiring</span></div>
-      </div>
-      <div class="venture-slide">
-        <img src="IMG_0387.JPG" alt="TIQWorld moment four">
-        <div class="venture-slide-caption"><strong>Founder Voice</strong><span>Speaking for industrial change</span></div>
-      </div>
-
-      <div class="slider-dots">
-        <button class="slider-dot active" data-slide="0"></button>
-        <button class="slider-dot" data-slide="1"></button>
-        <button class="slider-dot" data-slide="2"></button>
-        <button class="slider-dot" data-slide="3"></button>
-      </div>
-    </div>
-  </div>
+<div class="topics-grid fade-up">
+<div class="topic-card" data-text="I explain AI, ML, LLMs, agents, diffusion models, and automation through practical engineering use cases. My goal is not to make AI sound complicated — it is to help students and professionals understand where it creates real value in inspection, NDT, quality engineering, product building, and decision-making." data-title="AI/ML &amp; Data Science Workshops">
+<img alt="AI and quality engineering speaking topic" src="IMG_0387.JPG"/>
+<div class="topic-overlay"></div>
+<div class="topic-content">
+<div class="topic-num">01</div>
+<div class="topic-title">AI/ML &amp; Data Science Workshops</div>
+<div class="topic-body">AI, future of work, NDT, quality engineering, inspection, and industrial transformation — taught from real use cases.</div>
+<span class="topic-click">Click image to hear my perspective</span>
+</div>
+</div>
+<div class="topic-card" data-text="I mentor young builders on how to move from idea to execution: validating problems, designing business models, pitching, building products, and thinking like founders. My sessions combine IIT Madras research exposure, startup execution, and the reality of building inside hard industrial ecosystems." data-title="Entrepreneurship and Startup Mentorship">
+<img alt="Hybrid learning and certification speaking topic" src="IMG_0408.JPG"/>
+<div class="topic-overlay"></div>
+<div class="topic-content">
+<div class="topic-num">02</div>
+<div class="topic-title">Entrepreneurship and Startup Mentorship</div>
+<div class="topic-body">Startup thinking, business models, pitching, product building, validation, and founder mindset.</div>
+<span class="topic-click">Click image to hear my perspective</span>
+</div>
+</div>
+<div class="topic-card" data-text="This is the problem I am building for through TIQWorld. I talk about how NDE, inspection, certification, training, hiring, and manufacturing quality can move from fragmented offline processes into intelligent, verified, digital ecosystems powered by AI and automation." data-title="Digitalization in Manufacturing Quality Ecosystems">
+<img alt="Entrepreneurship and deep-tech talent speaking topic" src="IMG_4938.JPEG"/>
+<div class="topic-overlay"></div>
+<div class="topic-content">
+<div class="topic-num">03</div>
+<div class="topic-title">Digitalization in Manufacturing Quality Ecosystems</div>
+<div class="topic-body">NDE 4.0, manufacturing quality, certification, verified talent, hiring, and intelligent automation.</div>
+<span class="topic-click">Click image to hear my perspective</span>
+</div>
+</div>
+</div>
 </section>
-
+<div class="topic-popup" id="topicPopup">
+<div class="topic-popup-box">
+<button class="topic-popup-close" id="topicPopupClose">×</button>
+<h3 id="topicPopupTitle"></h3>
+<p id="topicPopupText"></p>
+</div>
+</div>
+<!-- VENTURE -->
+<section class="venture" id="venture">
+<div class="venture-content fade-up">
+<div class="section-tag">My Co-Founded Venture</div>
+<h2 class="venture-h2">Inside<br/><em>TIQWorld</em><br/>in motion.</h2>
+<p class="venture-body">TIQWorld is the company I’m building to digitalize trust in inspection and manufacturing quality. It brings training, certification, verified skills, hiring, and quality talent discovery into one connected ecosystem.</p>
+<p class="venture-body">For me, TIQWorld is not just a startup deck or a platform page. It is a response to a problem I saw repeatedly: the industrial world has capability, but it needs better visibility, better verification, and better access to the right people.</p>
+<a class="btn-primary" href="TIQWorld.html">Explore TIQWorld →</a>
+</div>
+<div class="venture-image fade-up">
+<div class="venture-slider">
+<div class="venture-slide active">
+<img alt="TIQWorld moment one" src="IMG_4965.JPEG"/>
+<div class="venture-slide-caption"><strong>TIQWorld</strong><span>Where talent meets trust</span></div>
+</div>
+<div class="venture-slide">
+<img alt="TIQWorld moment two" src="IMG_4967.JPEG"/>
+<div class="venture-slide-caption"><strong>Industry</strong><span>Built for real engineering teams</span></div>
+</div>
+<div class="venture-slide">
+<img alt="TIQWorld moment three" src="IMG_2849.JPEG"/>
+<div class="venture-slide-caption"><strong>Talent</strong><span>Training, verification, hiring</span></div>
+</div>
+<div class="venture-slide">
+<img alt="TIQWorld moment four" src="IMG_0387.JPG"/>
+<div class="venture-slide-caption"><strong>Founder Voice</strong><span>Speaking for industrial change</span></div>
+</div>
+<div class="slider-dots">
+<button class="slider-dot active" data-slide="0"></button>
+<button class="slider-dot" data-slide="1"></button>
+<button class="slider-dot" data-slide="2"></button>
+<button class="slider-dot" data-slide="3"></button>
+</div>
+</div>
+</div>
+</section>
 <!-- QUOTE -->
 <section class="quote-section">
-  <div class="quote-mark">"</div>
-  <p class="quote-text">The question isn't whether to adopt hybrid methods, but how to implement them effectively to ensure genuine expertise and industry readiness.</p>
-  <div class="quote-attr">— Srijan Tiwari, ISNT NDE Conference 2025, Mumbai</div>
+<div class="quote-mark">"</div>
+<p class="quote-text">I’m not building for applause. I’m building for the moment a student becomes industry-ready, a company finds trusted talent, and a fragmented ecosystem finally starts speaking one digital language.</p>
+<div class="quote-attr">— Srijan Tiwari</div>
 </section>
-
 <!-- GALLERY -->
 <section class="gallery">
-  <div class="gallery-header fade-up">
-    <div>
-      <div class="section-tag-light">In The Room</div>
-      <h2 class="gallery-h2">Moments<br>that <em>matter.</em></h2>
-    </div>
-  </div>
-  <div class="gallery-strip fade-up">
-    <div class="gal-item"><img class="gal-img" src="IMG_4938.JPEG"></div>
-    <div class="gal-item"><img class="gal-img" src="IMG_4967.JPEG"></div>
-    <div class="gal-item"><img class="gal-img" src="IMG_2849.JPEG"></div>
-    <div class="gal-item"><img class="gal-img" src="IMG_0387.JPG"></div>
-  </div>
+<div class="gallery-header fade-up">
+<div>
+<div class="section-tag-light">In The Room</div>
+<h2 class="gallery-h2">Moments<br/>that <em>matter.</em></h2>
+</div>
+</div>
+<div class="gallery-strip fade-up">
+<div class="gal-item"><img class="gal-img" src="IMG_4938.JPEG"/></div>
+<div class="gal-item"><img class="gal-img" src="IMG_4967.JPEG"/></div>
+<div class="gal-item"><img class="gal-img" src="IMG_2849.JPEG"/></div>
+<div class="gal-item"><img class="gal-img" src="IMG_0387.JPG"/></div>
+</div>
 </section>
-
 <!-- CTA / CONTACT -->
-<section id="contact" class="cta-section">
-  <div class="cta-left fade-up">
-    <div class="section-tag">Work With Srijan</div>
-    <h2 class="cta-h2">Let's build<br>something<br><em>real.</em></h2>
-    <p class="cta-body">
-      Whether you're looking for a keynote speaker who actually understands your industry, a workshop facilitator who doesn't talk down to engineers, or a collaborator who thinks at the intersection of AI and industrial tech — this is where it starts.
-    </p>
-    <div class="cta-actions">
-      <a href="mailto:srijantiwari10@gmail.com" class="btn-primary">Send an Email</a>
-      <a href="https://www.linkedin.com/in/srijantiwari10/" class="btn-outline" target="_blank" rel="noopener noreferrer">
+<section class="cta-section" id="contact">
+<div class="cta-left fade-up">
+<div class="section-tag">Work With Srijan</div>
+<h2 class="cta-h2">Let’s build something real.</h2>
+<p class="cta-body">If you’re looking for a keynote, workshop, mentorship session, AI/ML program, entrepreneurship module, or an industry collaboration around digital quality ecosystems — I’d love to build it with clarity, intensity, and measurable impact.</p>
+<div class="cta-actions">
+<a class="btn-primary" href="mailto:srijantiwari10@gmail.com">Send an Email</a>
+<a class="btn-outline" href="https://www.linkedin.com/in/srijantiwari10/" rel="noopener noreferrer" target="_blank">
   LinkedIn
 </a>
-      </div>
-  </div>
-  <div class="cta-right fade-up">
-    <div class="form-row">
-      <label class="form-label">Your Name</label>
-      <input type="text" class="form-input" placeholder="[Your Full Name]">
-    </div>
-    <div class="form-row">
-      <label class="form-label">Organisation</label>
-      <input type="text" class="form-input" placeholder="[Company / Institution]">
-    </div>
-    <div class="form-row">
-      <label class="form-label">Email Address</label>
-      <input type="email" class="form-input" placeholder="[Your Email]">
-    </div>
-    <div class="form-row">
-      <label class="form-label">What are you looking for?</label>
-      <textarea class="form-input" placeholder="[Keynote / Workshop / Collaboration / Other]"></textarea>
-    </div>
-    <button class="form-submit">Send Enquiry →</button>
-  </div>
+</div>
+</div>
+<div class="cta-right fade-up">
+<div class="form-row">
+<label class="form-label">Your Name</label>
+<input class="form-input" placeholder="[Your Full Name]" type="text"/>
+</div>
+<div class="form-row">
+<label class="form-label">Organisation</label>
+<input class="form-input" placeholder="[Company / Institution]" type="text"/>
+</div>
+<div class="form-row">
+<label class="form-label">Email Address</label>
+<input class="form-input" placeholder="[Your Email]" type="email"/>
+</div>
+<div class="form-row">
+<label class="form-label">What are you looking for?</label>
+<textarea class="form-input" placeholder="[Keynote / Workshop / Collaboration / Other]"></textarea>
+</div>
+<button class="form-submit">Send Enquiry →</button>
+</div>
 </section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div>
-      <!-- Logo white version for dark footer -->
-      <!-- Left: Srijan Speaks logo as image -->
-  <a href="index.html" class="nav-logo" aria-label="Srijan Speaks Home">
-    <img 
-      class="nav-logo-svg" 
-      src="darklogo.png" 
-      alt="Srijan Speaks Logo"
-    >
-  </a>
-      <p class="footer-tagline">Speaker. Entrepreneur. Educator. Building at the intersection of industry and intelligence.</p>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <div class="footer-col-title">Navigate</div>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="Talks.html">Talks</a></li>
-          <li><a href="Teaching.html">Teaching</a></li>
-          <li><a href="TIQWorld.html">TIQWorld</a></li>
-          <li><a href="Blogs.html">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Platforms</div>
-        <ul>
-          <li><a href="TIQWorld.html">TIQWorld</a></li>
-          <li><a href="Talks.html">Talks</a></li>
-          <li><a href="Blogs.html">Blog</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Srijan Tiwari. All rights reserved.</div>
-    <div class="footer-socials">
-      <a href="https://www.linkedin.com/in/srijantiwari10/" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/srijanspeaks/?hl=en">Instagram</a>
-      
-    </div>
-  </div>
+<div class="footer-top">
+<div>
+<!-- Logo white version for dark footer -->
+<!-- Left: Srijan Speaks logo as image -->
+<a aria-label="Srijan Speaks Home" class="nav-logo" href="index.html">
+<img alt="Srijan Speaks Logo" class="nav-logo-svg" src="darklogo.png"/>
+</a>
+<p class="footer-tagline">Impact entrepreneur. Speaker. AI educator. Building at the intersection of industry, intelligence, and trust.</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">Navigate</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="Talks.html">Talks</a></li>
+<li><a href="Teaching.html">Teaching</a></li>
+<li><a href="TIQWorld.html">TIQWorld</a></li>
+<li><a href="Blogs.html">Blog</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">Platforms</div>
+<ul>
+<li><a href="TIQWorld.html">TIQWorld</a></li>
+<li><a href="Talks.html">Talks</a></li>
+<li><a href="Blogs.html">Blog</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2026 Srijan Tiwari. All rights reserved.</div>
+<div class="footer-socials">
+<a href="https://www.linkedin.com/in/srijantiwari10/" target="_blank">LinkedIn</a>
+<a href="https://www.instagram.com/srijanspeaks/?hl=en">Instagram</a>
+</div>
+</div>
 </footer>
-
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -2390,6 +2549,5 @@ nav > .nav-logo .nav-logo-svg,
     showSlide(nextSlide);
   }, 3000);
 </script>
-
 </body>
 </html>
