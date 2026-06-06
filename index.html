@@ -2049,6 +2049,36 @@ nav .nav-right {
   margin: 0 !important;
   flex: none !important;
 }
+.ab-label {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background: var(--accent);
+    color: var(--white);
+    padding: 18px 24px;
+    z-index: 5;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 420px;
+}
+
+.ab-label span {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.ab-label strong {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    margin-top: 6px;
+}
 
 nav .nav-right .nav-logo,
 nav .nav-right .nav-logo:empty {
@@ -2105,6 +2135,17 @@ nav .nav-cta:hover {
     padding: 10px 14px !important;
     font-size: 0.66rem !important;
   }
+}
+.strip-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    padding: 0 2rem;
+}
+
+.strip-inner {
+    animation: marquee 30s linear infinite;
 }
 
 @media (max-width: 900px) {
@@ -2196,7 +2237,7 @@ nav .nav-cta:hover {
 <span class="accent-line">I mentor.</span>
 <span class="thin-line">I speak.</span>
 </h1>
-<p class="hero-desc">I am an IIT Madras entrepreneur building at the intersection of AI, manufacturing quality, NDE 4.0, and real-world skill transformation. Through TIQWorld, teaching, mentorship, and global speaking rooms, I work on one mission: turning talent, technology, and trust into measurable industrial impact.</p>
+<p class="hero-desc"> I am a Founder from IIT Madras, I run AI/ML programs for budding engineers, lead Entrepreneurship education across Nation, and Industry keynote Speaker on Digitalising Manufacturing ecosystems from India to global stages viz. Germany, Luxembourg, Middle East and Stanford (U.S.) </p>
 <div class="hero-highlight-box">
 <div class="hero-highlight-item">
 <strong>Lead Faculty — AI/ML</strong>
@@ -2229,20 +2270,24 @@ nav .nav-cta:hover {
 <!-- MARQUEE STRIP -->
 <div class="strip">
 <div class="strip-inner">
-<span class="strip-item">Speaker<span class="sep"> ✦</span></span>
-<span class="strip-item">Entrepreneur<span class="sep"> ✦</span></span>
-<span class="strip-item">AI Educator<span class="sep"> ✦</span></span>
-<span class="strip-item">Co-Founder TIQWorld<span class="sep"> ✦</span></span>
-<span class="strip-item">IIT Madras<span class="sep"> ✦</span></span>
-<span class="strip-item">Quality Engineering<span class="sep"> ✦</span></span>
-<span class="strip-item">Industry Disruptor<span class="sep"> ✦</span></span>
-<span class="strip-item">Speaker<span class="sep"> ✦</span></span>
-<span class="strip-item">Entrepreneur<span class="sep"> ✦</span></span>
-<span class="strip-item">AI Educator<span class="sep"> ✦</span></span>
-<span class="strip-item">Co-Founder TIQWorld<span class="sep"> ✦</span></span>
-<span class="strip-item">IIT Madras<span class="sep"> ✦</span></span>
-<span class="strip-item">Quality Engineering<span class="sep"> ✦</span></span>
-<span class="strip-item">Industry Disruptor<span class="sep"> ✦</span></span>
+<div class="strip-inner">
+    <span class="strip-item">Empowered 10K+ Engineers (Colleges across Pan India)<span class="sep"> ✦</span></span>
+
+    <span class="strip-item">Mentored 5K+ Young Founders into Entrepreneurship & Startups<span class="sep"> ✦</span></span>
+
+    <span class="strip-item">Delivered 10+ Industry Keynote Sessions across National & International Conferences<span class="sep"> ✦</span></span>
+
+    <span class="strip-item">Global Presence: India, U.S., Middle East, Europe<span class="sep"> ✦</span></span>
+
+    <!-- Repeat for seamless marquee -->
+    <span class="strip-item">Empowered 10K+ Engineers (Colleges across Pan India)<span class="sep"> ✦</span></span>
+
+    <span class="strip-item">Mentored 5K+ Young Founders into Entrepreneurship & Startups<span class="sep"> ✦</span></span>
+
+    <span class="strip-item">Delivered 10+ Industry Keynote Sessions across National & International Conferences<span class="sep"> ✦</span></span>
+
+    <span class="strip-item">Global Presence: India, U.S., Middle East, Europe<span class="sep"> ✦</span></span>
+</div>
 </div>
 </div>
 <!-- ABOUT -->
@@ -2250,10 +2295,10 @@ nav .nav-cta:hover {
 <div class="about-images fade-up">
 <img class="ab-img-1" src="IMG_0701.JPG"/>
 <img class="ab-img-2" src="IMG_7256.JPEG"/>
-<div class="ab-label">
-<strong>25</strong>
-      Years Old<br/>Building Tomorrow
-    </div>
+<div class="ab-label skilled-india">
+    <span>Contributing to the Dream of</span>
+    <strong>Skilled India</strong>
+</div>
 </div>
 <div class="about-content fade-up">
 <div class="section-tag">About Me</div>
@@ -2339,7 +2384,7 @@ nav .nav-cta:hover {
 </div>
 </div>
 <div class="topic-card" data-text="This is the problem I am building for through TIQWorld. I talk about how NDE, inspection, certification, training, hiring, and manufacturing quality can move from fragmented offline processes into intelligent, verified, digital ecosystems powered by AI and automation." data-title="Digitalization in Manufacturing Quality Ecosystems">
-<img alt="Entrepreneurship and deep-tech talent speaking topic" src="IMG_9943 .jpg"/>
+<img alt="Entrepreneurship and deep-tech talent speaking topic" src="IMG_9943.jpg"/>
 <div class="topic-overlay"></div>
 <div class="topic-content">
 <div class="topic-num">03</div>
