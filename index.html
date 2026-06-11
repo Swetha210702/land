@@ -2120,6 +2120,271 @@ nav .nav-cta:hover {
     width: 130px !important;
     min-width: 130px !important;
   }
+  .featured-thought{
+    padding:120px 7vw;
+    background:#ffffff;
+}
+
+.featured-thought-inner{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.featured-thought-media{
+    overflow:hidden;
+    border-radius:24px;
+}
+
+.featured-thought-media img,
+.featured-thought-media video{
+    width:100%;
+    height:560px;
+    object-fit:cover;
+    display:block;
+}
+
+.featured-thought-content h2{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(3rem,5vw,5rem);
+    line-height:.92;
+    margin:18px 0;
+}
+.moments-section{
+    padding:120px 7vw;
+    background:#10284a;
+    overflow:hidden;
+}
+
+.moments-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.moments-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(3rem,5vw,5rem);
+    color:white;
+    line-height:.95;
+}
+
+.moments-title span{
+    color:var(--accent);
+}
+
+.moments-sub{
+    color:#b8c9df;
+    max-width:550px;
+    margin:20px auto 0;
+    line-height:1.7;
+}
+
+.moments-slider{
+    overflow:hidden;
+}
+
+.moments-track{
+    display:flex;
+    gap:24px;
+    width:max-content;
+    animation:momentsScroll 40s linear infinite;
+}
+/* ==========================
+   FEATURED THOUGHT SECTION
+========================== */
+
+.featured-thought{
+    padding:120px 7vw;
+    background:#ffffff;
+}
+
+.featured-thought-inner{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.featured-thought-media{
+    overflow:hidden;
+    border-radius:24px;
+    position:relative;
+}
+
+.featured-thought-media img,
+.featured-thought-media video{
+    width:100%;
+    height:560px;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease;
+}
+
+.featured-thought-media:hover img,
+.featured-thought-media:hover video{
+    transform:scale(1.05);
+}
+
+.featured-thought-content{
+    max-width:560px;
+}
+
+.featured-thought-content .section-tag{
+    display:inline-block;
+    margin-bottom:18px;
+}
+
+.featured-thought-content h2{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(3rem,5vw,5rem);
+    line-height:.92;
+    color:var(--navy);
+    margin-bottom:24px;
+}
+
+.featured-thought-content p{
+    font-size:1.05rem;
+    line-height:1.9;
+    color:#4d6380;
+    margin-bottom:28px;
+}
+
+.thought-meta{
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    color:#8ca0ba;
+    margin-bottom:32px;
+}
+
+.featured-thought-content .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* Optional subtle divider */
+
+.featured-thought{
+    border-top:1px solid rgba(16,40,74,.08);
+}
+
+/* Mobile */
+
+@media (max-width: 900px){
+
+    .featured-thought{
+        padding:90px 6vw;
+    }
+
+    .featured-thought-inner{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .featured-thought-media img,
+    .featured-thought-media video{
+        height:400px;
+    }
+
+    .featured-thought-content{
+        max-width:100%;
+    }
+
+    .featured-thought-content h2{
+        font-size:3rem;
+    }
+}
+
+.moment-card{
+    width:340px;
+    height:520px;
+    flex-shrink:0;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    background:#000;
+}
+
+.moment-card img,
+.moment-card video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .5s ease;
+}
+
+.moment-card:hover img,
+.moment-card:hover video{
+    transform:scale(1.05);
+}
+
+.moment-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,0) 60%
+    );
+}
+
+.moment-overlay span{
+    position:absolute;
+    left:24px;
+    bottom:24px;
+
+    color:white;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:1.5rem;
+    letter-spacing:.05em;
+}
+
+@keyframes momentsScroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+@media(max-width:768px){
+
+    .moment-card{
+        width:260px;
+        height:400px;
+    }
+
+}
+.featured-thought-content p{
+    max-width:520px;
+    line-height:1.9;
+    color:#4d6380;
+}
+
+.thought-meta{
+    margin:24px 0;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    font-size:.75rem;
+    color:#7a8a9e;
+}
+
+@media(max-width:900px){
+
+    .featured-thought-inner{
+        grid-template-columns:1fr;
+    }
+
+    .featured-thought-media img,
+    .featured-thought-media video{
+        height:420px;
+    }
+
+}
   nav > .nav-logo .nav-logo-svg,
   nav .nav-logo-svg {
     width: 130px !important;
@@ -2205,7 +2470,291 @@ nav .nav-cta:hover {
     font-size: 0.58rem !important;
   }
 }
+/* ==========================================
+   HOMEPAGE FEATURED ARTICLE
+========================================== */
+
+.featured-thought{
+  padding:120px 7vw;
+  background:#f7f7f7;
+}
+
+.featured-thought-card{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  border:1px solid #c8d0dc;
+  box-shadow:0 20px 50px rgba(29,61,112,.08);
+  padding:60px;
+  position:relative;
+}
+
+.featured-thought-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:#F38121;
+}
+
+.featured-label{
+  font-size:.7rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#F38121;
+  font-weight:700;
+  margin-bottom:24px;
+}
+
+.featured-title-home{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:4.5rem;
+  line-height:.9;
+  color:#1D3D70;
+  margin-bottom:20px;
+}
+
+.featured-title-home em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  color:#1D3D70;
+  font-size:.9em;
+}
+
+.featured-meta-home{
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#7a8a9e;
+  font-weight:600;
+  margin-bottom:24px;
+}
+
+.featured-copy-home{
+  color:#4d6380;
+  line-height:1.9;
+  font-size:1rem;
+  max-width:700px;
+  margin-bottom:28px;
+}
+
+.featured-link-home{
+  color:#F38121;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.78rem;
+  font-weight:700;
+  transition:.3s;
+}
+
+.featured-link-home:hover{
+  letter-spacing:.18em;
+}
+
+@media(max-width:768px){
+
+  .featured-thought{
+    padding:80px 20px;
+  }
+
+  .featured-thought-card{
+    padding:35px;
+  }
+
+  .featured-title-home{
+    font-size:3rem;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .featured-thought-card{
+    padding:28px;
+  }
+
+  .featured-title-home{
+    font-size:2.4rem;
+  }
+
+}
+.featured-article {
+  padding: 104px 7vw 26px;
+  background: linear-gradient(180deg, #eef0f5 0%, var(--white) 100%);
+}
+.featured-article-card {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.86fr);
+  gap: 44px;
+  align-items: stretch;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 18px 46px rgba(29, 61, 112, 0.08);
+  overflow: hidden;
+}
+.featured-article-copy {
+  padding: 46px 0 46px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.featured-article-kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.featured-article-kicker::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+  display: block;
+}
+.featured-article-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 4.3vw, 4.8rem);
+  line-height: 0.92;
+  color: var(--black);
+  letter-spacing: 0.01em;
+  margin-bottom: 14px;
+  max-width: 680px;
+}
+.featured-article-title em {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.72em;
+  font-style: italic;
+  color: var(--accent);
+}
+.featured-article-meta {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+.featured-article-text {
+  color: #3a4f6a;
+  font-size: 0.98rem;
+  line-height: 1.78;
+  max-width: 600px;
+  margin-bottom: 28px;
+}
+.featured-article-link {
+  align-self: flex-start;
+  color: var(--accent);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+}
+.featured-article-link:hover {
+  color: var(--black);
+  transform: translateX(4px);
+}
+.featured-article-media {
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid var(--border);
+  background: var(--cream);
+}
+.featured-article-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(8%);
+  transition: transform 0.55s ease, filter 0.55s ease;
+}
+.featured-article-card:hover .featured-article-media img {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+@media (max-width: 980px) {
+  .featured-article {
+    padding: 78px 5vw 44px;
+  }
+  .featured-article-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .featured-article-copy {
+    padding: 34px;
+  }
+  .featured-article-media {
+    min-height: 340px;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 560px) {
+  .featured-article {
+    padding: 62px 20px 34px;
+  }
+  .featured-article-copy {
+    padding: 26px 22px 28px;
+  }
+  .featured-article-title {
+    font-size: clamp(2.2rem, 13vw, 3.4rem);
+  }
+  .featured-article-text {
+    font-size: 0.92rem;
+    line-height: 1.72;
+  }
+  .featured-article-media {
+    min-height: 280px;
+  }
+}
+
+.featured-article + .cta-section {
+  padding-top: 104px;
+}
+
+
 </style>
+
+<style>
+.moments-section{padding:120px 7vw;background:#10284a;overflow:hidden}
+.moments-header{text-align:center;margin-bottom:60px}
+.moments-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);color:#fff}
+.moments-title span{color:var(--accent)}
+.moments-sub{color:#b8c9df;max-width:600px;margin:20px auto 0;line-height:1.7}
+.moments-track{display:flex;gap:24px;width:max-content;animation:momentsScroll 30s linear infinite}
+.moment-card{width:340px;height:520px;overflow:hidden;position:relative;border-radius:16px}
+.moment-card img{width:100%;height:100%;object-fit:cover}
+.moment-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 60%)}
+.moment-overlay span{position:absolute;bottom:24px;left:24px;color:white;font-family:'Bebas Neue',sans-serif;font-size:1.5rem}
+@keyframes momentsScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.insights-section{padding:120px 7vw;background:white}
+.insights-header{text-align:center;margin-bottom:60px}
+.insights-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem)}
+.insights-title span,.insight-number,.insight-card span{color:var(--accent)}
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.insight-card{background:var(--cream);padding:40px;text-decoration:none;color:inherit}
+.insight-card h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;margin-top:12px}
+.insight-card p{margin-top:12px;line-height:1.7}
+.insight-number{font-family:'Bebas Neue',sans-serif;font-size:3rem}
+@media(max-width:900px){.insights-grid{grid-template-columns:1fr}}
+</style>
+
 </head>
 <body>
 <!-- NAV -->
@@ -2368,7 +2917,7 @@ nav .nav-cta:hover {
 <div class="topic-overlay"></div>
 <div class="topic-content">
 <div class="topic-num">01</div>
-<div class="topic-title">AI/ML &amp; Data Science Workshops</div>
+<div class="topic-title">AI/ML  Data Science Workshops</div>
 <div class="topic-body">AI, future of work, NDT, quality engineering, inspection, and industrial transformation — taught from real use cases.</div>
 <span class="topic-click">Click image to hear my perspective</span>
 </div>
@@ -2384,7 +2933,7 @@ nav .nav-cta:hover {
 </div>
 </div>
 <div class="topic-card" data-text="This is the problem I am building for through TIQWorld. I talk about how NDE, inspection, certification, training, hiring, and manufacturing quality can move from fragmented offline processes into intelligent, verified, digital ecosystems powered by AI and automation." data-title="Digitalization in Manufacturing Quality Ecosystems">
-<img alt="Entrepreneurship and deep-tech talent speaking topic" src="IMG_9943.jpg"/>
+<img alt="Entrepreneurship and deep-tech talent speaking topic" src="IMG_6354.jpg"/>
 <div class="topic-overlay"></div>
 <div class="topic-content">
 <div class="topic-num">03</div>
@@ -2444,21 +2993,134 @@ nav .nav-cta:hover {
 <p class="quote-text">I’m not building for applause. I’m building for the moment a student becomes industry-ready, a company finds trusted talent, and a fragmented ecosystem finally starts speaking one digital language.</p>
 <div class="quote-attr">— Srijan Tiwari</div>
 </section>
-<!-- GALLERY -->
-<section class="gallery">
-<div class="gallery-header fade-up">
-<div>
-<div class="section-tag-light">In The Room</div>
-<h2 class="gallery-h2">Moments<br/>that <em>matter.</em></h2>
+
+<!-- MOMENTS SECTION -->
+<section class="moments-section">
+
+  <div class="moments-header fade-up">
+    <div class="section-tag-light">In The Room</div>
+
+    <h2 class="moments-title">
+      Moments <br>
+      <span>that matter.</span>
+    </h2>
+
+    <p class="moments-sub">
+      Not every conversation changes a room.
+      These moments did.
+    </p>
+  </div>
+
+  <div class="moments-slider">
+
+    <div class="moments-track">
+
+      <!-- PHOTO -->
+      <div class="moment-card">
+        <img src="IMG_4938.JPEG" alt="Stanford">
+        <div class="moment-overlay">
+          <span>Stanford</span>
+        </div>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="moment-card">
+        <video autoplay muted loop playsinline>
+          <source src="germany-talk.mp4" type="video/mp4">
+        </video>
+        <div class="moment-overlay">
+          <span>Germany</span>
+        </div>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="moment-card">
+        <img src="IMG_0387.JPG" alt="Keynote">
+        <div class="moment-overlay">
+          <span>Keynote</span>
+        </div>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="moment-card">
+        <video autoplay muted loop playsinline>
+          <source src="founder-session.mp4" type="video/mp4">
+        </video>
+        <div class="moment-overlay">
+          <span>Founder Session</span>
+        </div>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="moment-card">
+        <img src="IMG_0386.JPG" alt="Workshop">
+        <div class="moment-overlay">
+          <span>Workshop</span>
+        </div>
+      </div>
+
+      <!-- DUPLICATES FOR INFINITE SCROLL -->
+      <div class="moment-card">
+        <img src="IMG_4938.JPEG" alt="Stanford">
+        <div class="moment-overlay">
+          <span>Stanford</span>
+        </div>
+      </div>
+
+      <div class="moment-card">
+        <video autoplay muted loop playsinline>
+          <source src="germany-talk.mp4" type="video/mp4">
+        </video>
+        <div class="moment-overlay">
+          <span>Germany</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="featured-article">
+<article class="featured-article-card fade-up">
+<div class="featured-article-copy">
+<div class="featured-article-kicker">Featured Note</div>
+<h2 class="featured-article-title">Why industry change is really a <em>trust problem.</em></h2>
+<div class="featured-article-meta">Industry &middot; 6 Min Read &middot; April 2026</div>
+<p class="featured-article-text">Technology usually arrives before systems are ready for it. The gap is not just technical. It is cultural, operational, and deeply tied to trust, especially in manufacturing quality, workforce transformation, and the way people adopt new intelligence inside real industry rooms.</p>
+<a class="featured-article-link" href="article1.html">Read Full Article &rarr;</a>
 </div>
-</div>
-<div class="gallery-strip fade-up">
-<div class="gal-item"><img class="gal-img" src="IMG_4938.JPEG"/></div>
-<div class="gal-item"><img class="gal-img" src="IMG_4967.JPEG"/></div>
-<div class="gal-item"><img class="gal-img" src="IMG_2849.JPEG"/></div>
-<div class="gal-item"><img class="gal-img" src="IMG_0387.JPG"/></div>
+<a class="featured-article-media" href="article1.html" aria-label="Read featured article">
+<img src="IMG_0387.JPG" alt="Srijan Tiwari speaking in front of a TIQWorld presentation"/>
+</a>
+</article>
+</section>
+
+<div class="insights-grid">
+<a href="article1.html" class="insight-card">
+<div class="insight-number">01</div>
+<h3>Why Most AI Projects Fail Before They Start</h3>
+<p>What founders misunderstand about AI adoption, execution and business outcomes.</p>
+<span>Read Article →</span>
+</a>
+
+<a href="article2.html" class="insight-card">
+<div class="insight-number">02</div>
+<h3>Building Trust in Manufacturing</h3>
+<p>Why verification may become more valuable than credentials.</p>
+<span>Read Article →</span>
+</a>
+
+<a href="article3.html" class="insight-card">
+<div class="insight-number">03</div>
+<h3>Teaching Engineers to Think Like Founders</h3>
+<p>The mindset shift every student needs before entering industry.</p>
+<span>Read Article →</span>
+</a>
 </div>
 </section>
+
 <!-- CTA / CONTACT -->
 <section class="cta-section" id="contact">
 <div class="cta-left fade-up">
