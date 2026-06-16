@@ -1135,14 +1135,45 @@ nav .nav-cta:hover {
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);
 }
 
-.moment-overlay span {
+a.moment-card {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.moment-play-btn {
   position: absolute;
-  left: 24px;
-  bottom: 24px;
-  color: white;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.85);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, opacity 0.2s;
+  opacity: 0.85;
+  padding-left: 4px;
+  backdrop-filter: blur(4px);
+  pointer-events: all;
+}
+
+.moment-play-btn:hover {
+  background: var(--accent, #F38121);
+  border-color: var(--accent, #F38121);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.moment-card:hover .moment-play-btn {
+  opacity: 1;
 }
 
 @keyframes momentsScroll {
@@ -1768,7 +1799,6 @@ footer .nav-logo-svg {
       </div>
     </div>
     <div class="hero-actions">
-      <a class="btn-primary" href="#speaking">See Me Speak</a>
       <a class="btn-outline" href="#about">My Story</a>
     </div>
   </div>
@@ -1776,7 +1806,7 @@ footer .nav-logo-svg {
     <img alt="Srijan Tiwari" class="hero-img-main" src="IMG_0426.JPG"/>
     <div class="hero-img-overlay"></div>
     <div class="hero-badge">
-      <span>Impact Entrepreneur</span>
+      <span>Entrepreneur and Researcher</span>
       <strong>IIT Madras</strong>
       <span>Germany · Luxembourg · Middle East · Stanford</span>
     </div>
@@ -1809,9 +1839,10 @@ footer .nav-logo-svg {
   </div>
   <div class="about-content fade-up">
     <div class="section-tag">About Me</div>
-    <h2 class="about-h2">Researcher by day<br/><em class="blue-line">Founder by deadline</em> <em>Educator by choice.</em></h2>
-    <p class="about-body">I'm Srijan Tiwari — a researcher, founder, speaker, and educator from IIT Madras. I don't see entrepreneurship as just building a company; I see it as building systems that outlast conversations. My work sits where AI, NDE 4.0, manufacturing quality, certification, and skill verification meet.</p>
-    <p class="about-body">I've cleared my way into India's top technical institutions, chosen the research-and-startup route, and built TIQWorld to solve a problem I kept seeing up close: industry needs trusted talent, students need real exposure, and the quality ecosystem needs a digital layer that connects both with credibility.</p>
+    <h2 class="about-h2">An <em class="blue-line">Educator-first</em> Entrepreneur.</h2>
+    <p class="about-body">I believe the biggest opportunities lie where industries, institutions, and individuals struggle to connect.</p>
+    <p class="about-body">My work centers on building bridges between learning and employment, expertise and opportunity, technology and trust.</p>
+    <p class="about-body">Through research, entrepreneurship, and ecosystem development, I explore how digital platforms and AI can help create more transparent, efficient, and scalable systems for the future of manufacturing quality and skilled work.</p>
     <div class="about-pillars">
       <div class="pillar">
         <div class="pillar-title">Public Speaker</div>
@@ -1839,28 +1870,25 @@ footer .nav-logo-svg {
     <div>
       <div class="section-tag-light">On Stage</div>
       <h2 class="speaking-h2">
-        <em>Youngest</em><br/>
-        industry keynote speaker.<br/>
-        From India, for the world!
+        Selected among best<br/>
+        <em>40 founders</em><br/>
+        across the globe, Europe
       </h2>
     </div>
-    <p class="speaking-sub">I've spoken across student rooms, industry forums, startup ecosystems, and global learning spaces — from India to Germany, Luxembourg, the Middle East, Singapore, and the U.S. The audience changes, but my conviction stays the same: technology only matters when it creates capability.</p>
+    <p class="speaking-sub">I was selected among 40 founders from around the world for one of Europe's leading innovation and entrepreneurship programs. The week brought together entrepreneurs, researchers, and ecosystem builders across continents, all working through the same question. How does a technology-driven venture create real impact beyond its home market.</p>
   </div>
   <div class="speaking-grid fade-up">
     <div class="sg-item">
       <img class="sg-img" src="IITM/group/IMG_8540.JPG.jpeg" alt="TIQWorld Launch"/>
       <div class="sg-overlay"></div>
-      <div class="sg-caption"><strong>TIQWorld Launch</strong>National Demo Day</div>
     </div>
     <div class="sg-item">
       <img class="sg-img" src="IITM/group/IMG_8555.JPG.jpeg" alt="Industry Conference Keynote"/>
       <div class="sg-overlay"></div>
-      <div class="sg-caption"><strong>Keynote</strong>Industry Conference</div>
     </div>
     <div class="sg-item">
       <img class="sg-img" src="IITM/group/IMG_8728.JPG.jpeg" alt="ISNT 35th Annual Mumbai 2025"/>
       <div class="sg-overlay"></div>
-      <div class="sg-caption"><strong>ISNT 35th Annual</strong>Mumbai 2025</div>
     </div>
   </div>
 </section>
@@ -1925,15 +1953,16 @@ footer .nav-logo-svg {
   <div class="venture-content fade-up">
     <div class="section-tag">My Co-Founded Venture</div>
     <h2 class="venture-h2">Inside<br/><em>TIQWorld</em><br/>in motion.</h2>
-    <p class="venture-body">TIQWorld is the company I'm building to digitalize trust in inspection and manufacturing quality. It brings training, certification, verified skills, hiring, and quality talent discovery into one connected ecosystem.</p>
-    <p class="venture-body">For me, TIQWorld is not just a startup deck or a platform page. It is a response to a problem I saw repeatedly: the industrial world has capability, but it needs better visibility, better verification, and better access to the right people.</p>
+    <p class="venture-body">I walked in carrying a problem most people never notice. Behind every aircraft, refinery, railway, and energy plant, there are people working silently to keep them safe, and the world of testing, inspection, and NDE that holds it together is traditional, fragmented, and digitally underserved. TIQWorld is my attempt to change that.</p>
+    <p class="venture-body">The recognition came alongside it. TIQWorld was named among the Top 50 Emerging Changemakers for FY 2025-26 at the IITM Incubation Cell, and we received our first grant that took no equity, through the Techpioneer initiative supported by American Express and HDFC Bank. We incorporated only in August 2025, so all of this still feels early.</p>
+    <p class="venture-body">These are checkpoints, not endpoints. Grateful to Prof. Krishnan Balasubramaniam, the CNDE ecosystem, and everyone who believed before there was anything to show. Even more excited for what comes next.</p>
     <a class="btn-primary" href="TIQWorld.html">Explore TIQWorld →</a>
   </div>
   <div class="venture-image fade-up">
     <div class="venture-slider">
       <div class="venture-slide active">
         <img alt="TIQWorld moment one" src="IITM/IMG_0353.JPEG"/>
-        <div class="venture-slide-caption"><strong>TIQWorld</strong><span>Where talent meets trust</span></div>
+        <div class="venture-slide-caption"><strong>Srijan Speaks</strong><span>For The Impact</span></div>
       </div>
       <div class="venture-slide">
         <img alt="TIQWorld moment two" src="IITM/peak/IMG_7010.jpg"/>
@@ -1960,7 +1989,7 @@ footer .nav-logo-svg {
 <!-- QUOTE -->
 <section class="quote-section">
   <div class="quote-mark">"</div>
-  <p class="quote-text">I'm not building for applause. I'm building for the moment a student becomes industry-ready, a company finds trusted talent, and a fragmented ecosystem finally starts speaking one digital language.</p>
+  <p class="quote-text">For anyone reading this, remember! You are the world, the world is you!!</p>
   <div class="quote-attr">— Srijan Tiwari</div>
 </section>
 
@@ -1973,41 +2002,44 @@ footer .nav-logo-svg {
   </div>
   <div class="moments-slider">
     <div class="moments-track">
-      <div class="moment-card">
+      <a href="https://www.instagram.com/srijanspeaks/" target="_blank" rel="noopener noreferrer" class="moment-card">
         <img src="IITM/reviews/IMG_2461.PNG" alt="Stanford"/>
-        <div class="moment-overlay"><span>Stanford</span></div>
-      </div>
-      <div class="moment-card">
-        <video autoplay muted loop playsinline>
+        <div class="moment-overlay"></div>
+      </a>
+      <a href="https://www.instagram.com/srijanspeaks/" target="_blank" rel="noopener noreferrer" class="moment-card">
+        <video autoplay muted loop playsinline class="moment-video">
           <source src="IMG_2742_compressed.mp4" type="video/mp4"/>
         </video>
-        <div class="moment-overlay"><span>Germany</span></div>
-      </div>
-      <div class="moment-card">
+        <div class="moment-overlay"></div>
+        <button class="moment-play-btn" aria-label="Play/Pause">&#9654;</button>
+      </a>
+      <a href="https://www.instagram.com/srijanspeaks/" target="_blank" rel="noopener noreferrer" class="moment-card">
         <img src="IITM/group/IMG_1942.JPG.jpeg" alt="Keynote"/>
-        <div class="moment-overlay"><span>Keynote</span></div>
-      </div>
-      <div class="moment-card">
-        <video autoplay muted loop playsinline>
+        <div class="moment-overlay"></div>
+      </a>
+      <a href="https://www.instagram.com/srijanspeaks/" target="_blank" rel="noopener noreferrer" class="moment-card">
+        <video autoplay muted loop playsinline class="moment-video">
           <source src="IMG_2742_compressed.mp4" type="video/mp4"/>
         </video>
-        <div class="moment-overlay"><span>Founder Session</span></div>
-      </div>
-      <div class="moment-card">
+        <div class="moment-overlay"></div>
+        <button class="moment-play-btn" aria-label="Play/Pause">&#9654;</button>
+      </a>
+      <a href="https://www.instagram.com/srijanspeaks/" target="_blank" rel="noopener noreferrer" class="moment-card">
         <img src="IITM/group/IMG_8542.JPG.jpeg" alt="Workshop"/>
-        <div class="moment-overlay"><span>Workshop</span></div>
-      </div>
+        <div class="moment-overlay"></div>
+      </a>
       <!-- Duplicates for seamless infinite scroll -->
-      <div class="moment-card">
+      <a href="https://www.instagram.com/srijanspeaks/" target="_blank" rel="noopener noreferrer" class="moment-card">
         <img src="IITM/reviews/IMG_0152.JPG.jpeg" alt="Stanford"/>
-        <div class="moment-overlay"><span>Stanford</span></div>
-      </div>
-      <div class="moment-card">
-        <video autoplay muted loop playsinline>
+        <div class="moment-overlay"></div>
+      </a>
+      <a href="https://www.instagram.com/srijanspeaks/" target="_blank" rel="noopener noreferrer" class="moment-card">
+        <video autoplay muted loop playsinline class="moment-video">
           <source src="IMG_2742_compressed.mp4" type="video/mp4"/>
         </video>
-        <div class="moment-overlay"><span>Germany</span></div>
-      </div>
+        <div class="moment-overlay"></div>
+        <button class="moment-play-btn" aria-label="Play/Pause">&#9654;</button>
+      </a>
     </div>
   </div>
 </section>
@@ -2143,8 +2175,25 @@ footer .nav-logo-svg {
     currentSlide = index;
   }
 
-  dots.forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
-  setInterval(() => showSlide((currentSlide + 1) % slides.length), 3000);
+  // Play/pause buttons for moment videos
+  document.querySelectorAll('.moment-play-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const card = btn.closest('.moment-card');
+      const video = card.querySelector('video');
+      if (!video) return;
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = '&#9646;&#9646;';
+        btn.title = 'Pause';
+      } else {
+        video.pause();
+        btn.innerHTML = '&#9654;';
+        btn.title = 'Play';
+      }
+    });
+  });
 </script>
 </body>
 </html>
