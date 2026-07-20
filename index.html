@@ -6,7 +6,8 @@
 <title>Srijan Tiwari — Impact Entrepreneur · Speaker · AI Educator</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style> 
 /* ── VARIABLES & RESET ── */
 :root {
   --black: #1D3D70;
@@ -814,6 +815,298 @@ nav .nav-cta:hover {
   cursor: pointer;
   line-height: 1;
 }
+
+/* ===== CAROUSEL SECTION ===== */
+.carousel-section {
+  padding: 90px 7vw 72px;
+  background: linear-gradient(145deg, #163050 0%, #1D3D70 50%, #0f2240 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent) 70%, transparent 100%);
+}
+
+.carousel-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-section .section-tag {
+  color: var(--accent);
+}
+
+.carousel-section .section-tag::before {
+  background: var(--accent);
+}
+
+.carousel-section .section-title {
+  color: var(--white);
+}
+
+.carousel-sub {
+  font-size: 0.92rem;
+  color: rgba(200,215,230,0.85);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-top: 14px;
+}
+
+/* Carousel container */
+.cr-wrap {
+  position: relative;
+  margin-top: 40px;
+}
+
+/* Viewport */
+.cr-viewport {
+  overflow: hidden;
+  padding: 6px 0 10px;
+}
+
+/* Sliding track */
+.cr-track {
+  display: flex;
+  gap: 22px;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* Individual card — wrapped in <a> */
+.cr-card {
+  flex: 0 0 calc((100% - 44px) / 3);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  height: 430px;
+  border-radius: 6px;
+  background: #0d1b30;
+  border: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.cr-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(10,14,24,0.90) 100%);
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.cr-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(243,129,33,0.20), 0 4px 16px rgba(0,0,0,0.30);
+  border-color: var(--accent);
+}
+
+/* Accent line at top of card on hover */
+.cr-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 3;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.cr-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Image wrapper */
+.cr-card .media-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cr-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease, filter 0.55s ease;
+  filter: grayscale(10%);
+}
+
+.cr-card:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+
+/* Card info overlay */
+.cr-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 26px 22px 22px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Featured badge */
+.card-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.cr-card-info h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+
+.cr-card-info p {
+  color: rgba(200,215,230,.85);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+
+.cr-card-info .card-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.cr-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Controls bar */
+.cr-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.cr-arrows {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cr-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.cr-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(243,129,33,0.30);
+}
+
+.cr-btn:active {
+  transform: scale(0.95);
+}
+
+.cr-dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.cr-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.18);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  transition: all 0.35s ease;
+}
+
+.cr-dot:hover {
+  background: rgba(255,255,255,0.40);
+}
+
+.cr-dot.active {
+  background: var(--accent);
+  width: 26px;
+  border-radius: 4px;
+}
+
+.cr-counter {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.30);
+  letter-spacing: 0.15em;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .cr-card { flex: 0 0 calc((100% - 22px) / 2); height: 400px; }
+}
+
+@media (max-width: 900px) {
+  .carousel-section { padding: 70px 5vw 60px; }
+  .cr-card { flex: 0 0 calc((100% - 22px) / 2); height: 380px; }
+}
+
+@media (max-width: 600px) {
+  .carousel-section { padding: 56px 18px 48px; }
+  .cr-card { flex: 0 0 100%; height: 340px; }
+  .cr-bar { flex-direction: column; gap: 16px; align-items: stretch; }
+  .cr-arrows { justify-content: center; }
+  .cr-counter { text-align: center; }
+}
+
+/* ===== END CAROUSEL SECTION ===== */
 
 /* ── VENTURE ── */
 .venture {
@@ -1952,6 +2245,78 @@ footer .nav-logo-svg {
   </div>
 </section>
 
+<!-- CAROUSEL SECTION -->
+<section class="carousel-section" id="modules">
+  <div class="carousel-inner">
+    <div class="section-head fade-up" style="flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
+      <div>
+        <div class="section-tag-light">Formats &amp; Modules</div>
+        <h2 class="speaking-h2">
+          Teaching modules built on<br/>
+          <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--accent);font-size:0.9em;">real use cases.</em>
+        </h2>
+        <div style="width:60px;height:3px;background:var(--accent);margin:18px 0 16px;border-radius:2px;"></div>
+        <!-- <p class="carousel-sub">Each module is designed around applied learning — connecting deep technical understanding with the industries and problems that matter most.</p> -->
+      </div>
+    </div>
+    <div class="cr-wrap" id="crWrap">
+      <div class="cr-viewport">
+        <div class="cr-track" id="crTrack">
+          <a href="https://aseaneconomicforum.com/Economic-forum.html" class="cr-card">
+            <div class="media-wrap"><img src="WhatsApp Image 2026-07-14 at 10.27.57 AM.jpeg" alt="Neural Intelligence" loading="lazy"/></div>
+            <div class="cr-card-info">
+              <span class="card-badge">Featured</span>
+              <h3>Neural Intelligence v1.0</h3>
+              <p>Deep-dive into neural architectures and applied AI systems for future-ready engineers.</p>
+              <span class="card-arrow">Explore Module <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/posts/top-engineersindia_topengineers-techworkshops-engineeringstudents-activity-7483914382997995520-zeEL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFERV6wBjc22JCLhBRwyO_gW3VzAf7il3-k" class="cr-card">
+            <div class="media-wrap"><img src="1783959089971.jpg" alt="Building an AI Application" loading="lazy"/></div>
+            <div class="cr-card-info">
+              <h3>Building an AI Application</h3>
+              <p>Step-by-step session on integrating LLMs with real code, API costs, and latency metrics.</p>
+              <span class="card-arrow">Explore Module <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/posts/top-engineersindia_topengineers-techworkshops-engineeringstudents-activity-7483914382997995520-zeEL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFERV6wBjc22JCLhBRwyO_gW3VzAf7il3-k" class="cr-card">
+            <div class="media-wrap"><img src="1783959090236.jpg" alt="Python for Data Analysis" loading="lazy"/></div>
+            <div class="cr-card-info">
+              <h3>Python for Data Analysis</h3>
+              <p>Live demonstrations on cleaning and analyzing datasets using Pandas with visual insights.</p>
+              <span class="card-arrow">Explore Module <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/posts/top-engineersindia_topengineers-techworkshops-engineeringstudents-activity-7483914382997995520-zeEL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFERV6wBjc22JCLhBRwyO_gW3VzAf7il3-k" class="cr-card">
+            <div class="media-wrap"><img src="1783959089655.jpg" alt="Systems Architecture" loading="lazy"/></div>
+            <div class="cr-card-info">
+              <h3>Systems Architecture Review</h3>
+              <p>Deconstructs the architecture of high-traffic apps with load balancing and caching layers.</p>
+              <span class="card-arrow">Explore Module <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/posts/top-engineersindia_topengineers-techworkshops-engineeringstudents-activity-7483914382997995520-zeEL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFERV6wBjc22JCLhBRwyO_gW3VzAf7il3-k" class="cr-card">
+            <div class="media-wrap"><img src="1783959090308.jpg" alt="Intelligent Systems" loading="lazy"/></div>
+            <div class="cr-card-info">
+              <h3>Intelligent Systems Workshop</h3>
+              <p>Hands-on sessions building production-grade AI pipelines and deployment workflows.</p>
+              <span class="card-arrow">Explore Module <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="cr-bar">
+        <div class="cr-arrows">
+          <button class="cr-btn" id="crPrev" aria-label="Previous"><span class="material-symbols-outlined" style="font-size:18px">arrow_back</span></button>
+          <div class="cr-dots" id="crDots"></div>
+          <button class="cr-btn" id="crNext" aria-label="Next"><span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span></button>
+        </div>
+        <span class="cr-counter" id="crCount">1 / 2</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TOPIC POPUP -->
 <div class="topic-popup" id="topicPopup">
   <div class="topic-popup-box">
@@ -2212,6 +2577,98 @@ footer .nav-logo-svg {
 
   topicPopupClose.addEventListener('click', () => topicPopup.classList.remove('active'));
   topicPopup.addEventListener('click', (e) => { if (e.target === topicPopup) topicPopup.classList.remove('active'); });
+
+  // Carousel
+  (function () {
+    var track = document.getElementById("crTrack");
+    if (!track) return;
+    var cards = track.querySelectorAll(".cr-card");
+    var dotsBox = document.getElementById("crDots");
+    var countEl = document.getElementById("crCount");
+    var wrap = document.getElementById("crWrap");
+    var viewport = track.parentElement;
+    var prevBtn = document.getElementById("crPrev");
+    var nextBtn = document.getElementById("crNext");
+    var idx = 0, timer, perView, pages;
+    var gap = 22;
+
+    function calc() {
+      var w = window.innerWidth;
+      perView = w <= 600 ? 1 : w <= 1100 ? 2 : 3;
+      pages = Math.ceil(cards.length / perView);
+      if (pages < 1) pages = 1;
+      if (idx >= pages) idx = pages - 1;
+      if (idx < 0) idx = 0;
+    }
+
+    function buildDots() {
+      dotsBox.innerHTML = "";
+      for (var i = 0; i < pages; i++) {
+        var d = document.createElement("button");
+        d.className = "cr-dot" + (i === idx ? " active" : "");
+        d.setAttribute("data-i", i);
+        d.onclick = function () { go(+this.getAttribute("data-i")); };
+        dotsBox.appendChild(d);
+      }
+    }
+
+    function slide() {
+      if (!cards.length) return;
+      var cardW = cards[0].getBoundingClientRect().width;
+      var maxOffset = track.scrollWidth - viewport.offsetWidth;
+      var off = idx * perView * (cardW + gap);
+      if (off > maxOffset) off = maxOffset;
+      if (off < 0) off = 0;
+      track.style.transform = "translateX(-" + off + "px)";
+      dotsBox.querySelectorAll(".cr-dot").forEach(function (d, i) {
+        d.classList.toggle("active", i === idx);
+      });
+      countEl.textContent = (idx + 1) + " / " + pages;
+    }
+
+    function go(i) { idx = i; slide(); restart(); }
+    function nav(d) { idx = (idx + d + pages) % pages; slide(); restart(); }
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function () { nav(1); }, 5000);
+    }
+
+    // Pause on hover
+    wrap.addEventListener("mouseenter", function () { clearInterval(timer); });
+    wrap.addEventListener("mouseleave", function () { restart(); });
+
+    // Button bindings
+    prevBtn.addEventListener("click", function () { nav(-1); });
+    nextBtn.addEventListener("click", function () { nav(1); });
+
+    // Resize
+    window.addEventListener("resize", function () { calc(); buildDots(); slide(); });
+
+    // Keyboard — only when carousel is in viewport
+    document.addEventListener("keydown", function (e) {
+      var rect = wrap.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+      if (e.key === "ArrowLeft") nav(-1);
+      if (e.key === "ArrowRight") nav(1);
+    });
+
+    // Touch / swipe
+    var touchStartX = 0;
+    wrap.addEventListener("touchstart", function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    wrap.addEventListener("touchend", function (e) {
+      var diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) nav(diff > 0 ? 1 : -1);
+    }, { passive: true });
+
+    calc();
+    buildDots();
+    slide();
+    restart();
+    window.crNav = nav;
+  })();
 
   // Venture slideshow
   const slides = document.querySelectorAll('.venture-slide');
